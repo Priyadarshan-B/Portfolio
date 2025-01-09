@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 import { Modal } from "@mui/material";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
@@ -64,14 +66,13 @@ const Home = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center h-full w-full px-24 text-center md:text-left">
       <div className="mb-6 md:mb-0 md:w-1/2">
-        <h1 className="text-4xl md:text-5xl font-semibold text-gray-900" data-aos='fade-left'> 
+        <h1 className="text-4xl md:text-5xl font-semibold text-gray-900" data-aos='fade-right'> 
           Hi, I am Priyadarshan<br />
           <span className="txt font-light">{currentWord}</span>
           <span className="blink text-blue-200 animate-blink">|</span>
         </h1>
         <p className="mt-4 text-lg text-gray-600" data-aos='fade-right'>
-          Welcome to my portfolio! I specialize in creating beautiful,
-          responsive websites and web applications tailored to your needs.
+        Welcome to my portfolio! I craft innovative, user-friendly websites and applications that bring your ideas to life with precision and creativity.
         </p>
         <button
         data-aos='fade-up'
@@ -80,6 +81,40 @@ const Home = () => {
         >
           Download CV
         </button>
+        <div className="mt-6 p-6  bg-white rounded-lg shadow-sm flex gap-8 justify-center" data-aos='fade-down'>
+        <a
+          href="https://github.com/Priyadarshan-B/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-700 hover:text-green-600 text-2xl transition"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/priyadarshan-b-7b05a9271/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-700 hover:text-blue-500 text-2xl transition"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://www.instagram.com/_priyan_2004?igsh=N3V6anY5NjRsazAz"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-700 hover:text-pink-500 text-2xl transition"
+        >
+          <FaInstagram />
+        </a>
+        <a
+          href="https://leetcode.com/u/priyadarshan18824/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-700 hover:text-orange-500 text-2xl transition"
+        >
+          <SiLeetcode />
+        </a>
+      </div>
       </div>
 
       <div data-aos="fade-up" className="md:w-1/2 flex justify-center md:space-x-4">
@@ -88,7 +123,7 @@ const Home = () => {
           <img
             src={image}
             alt="photo"
-            className="image-container"
+            className="image-container cursor-pointer transform transition-transform duration-200 hover:scale-105"
           />
         </div>
       </div>
@@ -104,6 +139,7 @@ const Home = () => {
             width: "80%", 
             maxWidth: "600px",
             maxHeight: "90vh", 
+            // height:"80%",
             margin: "3% auto",
             backgroundColor: "white",
             padding: "1rem",
@@ -111,7 +147,7 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            overflow: "hidden",
+            overflow: "none",
           }}
           className="modal-container"
         >

@@ -27,7 +27,7 @@ const App = () => {
 
       <div
         id="home"
-        className="section h-screen flex items-center justify-center"
+        className="section pt-24 h-screen flex items-center justify-center"
         style={{ backgroundColor: "#effbf8" }}
       >
         <Home />
@@ -35,7 +35,7 @@ const App = () => {
 
       <div
         id="about"
-        className="section py-16 bg-gray-200 flex items-center justify-center"
+        className="section pt-24  bg-gray-200 flex items-center justify-center"
         style={{ backgroundColor: "#effbf8" }}
       >
         <About />

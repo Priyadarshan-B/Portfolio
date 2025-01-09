@@ -15,7 +15,7 @@ const skills = [
 const Skill= () => {
   return (
     <div className="w-full overflow-hidden  py-10">
-      <h2 className="text-3xl font-bold text-center mb-8" data-aos='fade-left'>My Skills</h2>
+      <h2 className="text-3xl font-bold text-center mb-8" data-aos='fade-left'>Skills</h2>
       <div className="relative">
         <div className="flex animate-scroll">
           {[...skills, ...skills].map((skill, index) => (

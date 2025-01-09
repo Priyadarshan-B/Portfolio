@@ -18,7 +18,7 @@ const images = {
     return (
       <div className="min-h-screen w-full  py-4 px-4  sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center" data-aos='fade-right'>My Projects</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center" data-aos='fade-right'>Projects</h1>
   
           <div  className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           data-aos = 'fade-up'
@@ -29,16 +29,16 @@ const images = {
               return (
                 <div data-aos = 'flip-right'
                   key={project.id}
-                  className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-200 hover:-translate-y-2 hover:scale-105"
+                  className="bg-white shadow-lg rounded-md overflow-hidden transform transition-transform duration-200 hover:scale-110"
                 >
-                  <div className="relative">
+                  <div className="relative transform transition-transform duration-200 hover:scale-110">
                     <img
                       src={image}
                       alt={project.title}
                       className="h-48 w-full object-cover"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 transform transition-transform duration-200 hover:scale-110">
                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
                       {project.title}
                     </div>

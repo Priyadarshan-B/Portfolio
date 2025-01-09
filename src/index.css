@@ -21,3 +21,20 @@ body {
   /* font-family: "Quicksand", serif; */
     margin: 0;
 }
+
+::-webkit-scrollbar {
+  width: 4px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(136, 136, 136); 
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #585858; 
+}
