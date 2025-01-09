@@ -38,7 +38,7 @@ const images = {
                       className="h-48 w-full object-cover"
                     />
                   </div>
-                  <div className="p-6 transform transition-transform duration-200 hover:scale-110">
+                  <div className="p-6 transform transition-transform duration-200 hover:scale-105">
                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
                       {project.title}
                     </div>
