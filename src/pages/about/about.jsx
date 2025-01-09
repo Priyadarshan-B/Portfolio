@@ -1,4 +1,5 @@
 import React from "react";
+import gif from '../../assets/about1.gif'
 import {
   Timeline,
   TimelineItem,
@@ -7,7 +8,14 @@ import {
   TimelineContent,
   TimelineDot,
 } from "@mui/lab";
-import { Typography, Box, Card, CardContent, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Card,
+  CardContent,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 const About = () => {
   const theme = useTheme();
@@ -56,7 +64,11 @@ const About = () => {
               <CardContent>
                 <Typography
                   variant="h6"
-                  sx={{ fontWeight: "bold", mb: 1, color: `${event.color}.main` }}
+                  sx={{
+                    fontWeight: "bold",
+                    mb: 1,
+                    color: `${event.color}.main`,
+                  }}
                 >
                   {event.title}
                 </Typography>
@@ -80,7 +92,11 @@ const About = () => {
                 >
                   <Typography
                     variant="h6"
-                    sx={{ fontWeight: "bold", mb: 1, color: `${event.color}.main` }}
+                    sx={{
+                      fontWeight: "bold",
+                      mb: 1,
+                      color: `${event.color}.main`,
+                    }}
                   >
                     {event.title}
                   </Typography>

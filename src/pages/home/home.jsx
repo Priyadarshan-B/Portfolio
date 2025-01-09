@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import { Modal } from "@mui/material";
 import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import "./home.css";
 import image from "../../assets/image.jpg";
-import samplePDF from "../../assets/cv.pdf"; 
+import samplePDF from "../../assets/cv.pdf";
 
 const Home = () => {
   const words = ["Developer", "Freelancer"];
@@ -62,7 +63,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center h-full w-full px-24 text-center md:text-left">
-      <div  className="mb-6 md:mb-0 md:w-1/2">
+      <div className="mb-6 md:mb-0 md:w-1/2">
         <h1 className="text-4xl md:text-5xl font-semibold text-gray-900" data-aos='fade-left'> 
           Hi, I am Priyadarshan<br />
           <span className="txt font-light">{currentWord}</span>
@@ -93,42 +94,40 @@ const Home = () => {
       </div>
 
       <Modal
-  open={isModalOpen}
-  onClose={closeModal}
-  aria-labelledby="pdf-preview"
-  aria-describedby="pdf-preview-description"
->
-  <div
-    style={{
-      width: "80%", 
-      maxWidth: "600px",
-      maxHeight: "90vh", 
-      margin: "3% auto",
-      backgroundColor: "white",
-      padding: "1rem",
-      borderRadius: "8px",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      overflow: "hidden",
-    }}
-    className="modal-container"
-  >
-    <div style={{ overflow: "hidden", height: "100%" }}>
-      <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
-        <Viewer fileUrl={samplePDF} />
-      </Worker>
-    </div>
-    <button
-      className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition self-center"
-      onClick={downloadPDF}
-    >
-      Download
-    </button>
-  </div>
-</Modal>
-
-
+        open={isModalOpen}
+        onClose={closeModal}
+        aria-labelledby="pdf-preview"
+        aria-describedby="pdf-preview-description"
+      >
+        <div
+          style={{
+            width: "80%", 
+            maxWidth: "600px",
+            maxHeight: "90vh", 
+            margin: "3% auto",
+            backgroundColor: "white",
+            padding: "1rem",
+            borderRadius: "8px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            overflow: "hidden",
+          }}
+          className="modal-container"
+        >
+          <div style={{ overflow: "hidden", height: "100%" }}>
+            <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
+              <Viewer fileUrl={samplePDF} />
+            </Worker>
+          </div>
+          <button
+            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition self-center"
+            onClick={downloadPDF}
+          >
+            Download
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 };
