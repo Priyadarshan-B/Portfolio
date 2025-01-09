@@ -1,31 +1,30 @@
 [
     {
-        "id":1,
-        "title":"Attendance Portal",
-        "description":"A sdfjnsofiuanrsfivuaerievieb v",
-        "image":"att1.png",
-        "techStack": ["ReactJS","Node JS", "MySQL","Express","Tailwind CSS"]
+        "id": 1,
+        "title": "Attendance Portal",
+        "description": "A web application for tracking student attendance using ReactJS, Node.js, and MySQL. It allows faculty to mark attendance and students to view their attendance records.",
+        "image": "1",
+        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS"]
     },
     {
-        "id":2,
-        "title":"Inventory Management (BestShop)",
-        "description":"A sdfjnsofiuanrsfivuaerievieb v",
-        "image":"/placeholder.svg?height=300&width=400",
-        "techStack": ["ReactJS","Node JS", "MySQL","Express","Tailwind CSS"]
+        "id": 2,
+        "title": "Inventory Management (BestShop)",
+        "description": "A platform for managing inventory in a retail environment, built using ReactJS, Node.js, and MySQL. It includes features for tracking stock levels, adding products, and managing orders.",
+        "image": "2",
+        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS"]
     },
     {
-        "id":3,
-        "title":"E-Learning Platform",
-        "description":"A sdfjnsofiuanrsfivuaerievieb v",
-        "image":"/placeholder.svg?height=300&width=400",
-        "techStack": ["ReactJS","Node JS", "MySQL","Express","Tailwind CSS"]
+        "id": 3,
+        "title": "E-Learning Platform",
+        "description": "An online platform for e-learning with course management, quizzes, and student tracking features. It allows students to enroll in courses and complete quizzes, with performance tracking.",
+        "image": "3",
+        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS"]
     },
     {
-        "id":4,
-        "title":"Travel Dot",
-        "description":"A sdfjnsofiuanrsfivuaerievieb v",
-        "image":"/placeholder.svg?height=300&width=400",
-        "techStack": ["ReactJS","Node JS", "MySQL","Express","Tailwind CSS"]
+        "id": 4,
+        "title": "Travel Dot",
+        "description": "A travel booking platform that allows users to search for destinations, book flights, and hotels. Built with ReactJS and Node.js for an intuitive user experience and smooth interaction.",
+        "image": "4",
+        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS"]
     }
-    
 ]

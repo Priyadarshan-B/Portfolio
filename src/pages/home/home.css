@@ -105,3 +105,13 @@
     object-fit: cover;
   }
   
+  
+    @media (max-width: 768px) {
+      .modal-container{
+      width: 95%;  /* Increase the width for mobile */
+      height: 50%;  /* Adjust height for mobile */
+      max-width: 500px;  /* Limit the max width on mobile */
+      max-height: 40vh;  /* Limit height for mobile */
+    }
+  }
+  

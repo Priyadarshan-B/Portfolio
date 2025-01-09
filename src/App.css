@@ -1,3 +1,25 @@
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+    display: flex;
+    width: calc(200%); 
+  }
+  
+  @media(max-width:999px){
+    .animate-scroll{
+    animation: scroll 3s linear infinite;
+
+    }
+  }

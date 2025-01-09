@@ -47,11 +47,11 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gray-100 flex items-center justify-center px-4">
+    <div className="min-h-screen w-full  flex items-center justify-center px-4" data-aos="fade-up">
       <div className="w-full max-w-5xl bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="p-6 md:p-8">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-4">Send a Message</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2"data-aos="fade-right">
+          <div className="p-6 md:p-8" data-aos="fade-up">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4" >Send a Message</h2>
             <form ref={form} onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Name</label>
@@ -105,8 +105,8 @@ const Contact = () => {
             </form>
           </div>
 
-          <div className="bg-gray-100 p-6 md:p-8">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-4">Contact Information</h2>
+          <div className="bg-gray-100 p-6 md:p-8" >
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">Contact </h2>
             <div className="space-y-6">
               <div className="flex items-center">
                 <FaPhone className="text-gray-600 mr-4 text-xl" />
