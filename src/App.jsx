@@ -37,7 +37,7 @@ const App = () => {
           <Navbar />
           <div
             id="home"
-            className="section pt-24 h-screen flex items-center justify-center"
+            className="section pt-32 h-screen flex items-center justify-center"
             style={{ backgroundColor: "#effbf8" }}
           >
             <Home />
