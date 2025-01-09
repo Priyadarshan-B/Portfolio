@@ -1,0 +1,29 @@
+.nav-link:hover{
+    color: #a5a6ff;
+}
+.nav-link{
+    transition: color 0.3s ease-in-out;
+}
+/* .navbar{
+    background-color: #effbf8;
+} */
+
+.navbar {
+    border-radius: 1rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .navbar ul {
+      text-align: center;
+    }
+  }
+  

@@ -1,0 +1,107 @@
+@keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    50.1%, 100% {
+      opacity: 0;
+    }
+  }
+  
+  .animate-blink {
+    animation: blink 1s step-start infinite;
+  }
+  
+  .txt{
+    color: #a5a6ff;
+  }
+  .blink{
+    color: #7f81fc;
+  }
+
+.wave-container {
+  position: relative;
+  width: 16rem;
+  height: 16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+  aspect-ratio: 1;
+}
+
+.wave-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid rgba(59, 130, 246, 0.5);
+  animation: wave 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.wave-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid rgba(59, 130, 246, 0.2);
+  animation: wave 2.5s infinite ease-in-out reverse;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  max-width: 16rem; 
+  object-fit: cover; 
+  border-radius: 50%;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .wave-container {
+    width: 12rem; 
+    height: 12rem;
+  }
+
+  .image-container {
+    width: 80%;
+    height: 80%;
+  }
+  .wave-animation {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .wave-container {
+    width: 10rem; 
+    height: 10rem;
+  }
+
+  .image-container {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+  .image-container  {
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
