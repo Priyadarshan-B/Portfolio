@@ -1,17 +1,18 @@
 import React from 'react';
 import projectsData from '../../components/projects.json';
 import att1 from '../../assets/att1.png'
-import att2 from '../../assets/att1.png'
-import att3 from '../../assets/att1.png'
-import att4 from '../../assets/att1.png'
-// import att5 from '../../assets/att1.png'
+import bs from '../../assets/bs.png'
+import learn from '../../assets/learn.png'
+import dot from '../../assets/dot.png'
+import la from '../../assets/la.png'
 
 
 const images = {
     1: att1,
-    2: att2,
-    3: att3,
-    4: att4,
+    2: bs,
+    3: learn,
+    4: dot,
+    5:la
   };
 
   const Project = () => {

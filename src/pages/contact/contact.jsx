@@ -154,14 +154,14 @@ const Contact = () => {
                 </a>
               </div>
               <div className="flex items-center">
-                <FaEnvelope className="text-gray-600 mr-4 text-xl" />
-                <a
-                  href="mailto:bpriyan18082004@gmail.com"
-                  className="text-gray-700 hover:text-blue-500"
-                >
-                  bpriyan18082004@gmail.com
-                </a>
-              </div>
+  <FaEnvelope className="text-gray-600 mr-4 text-base sm:text-xl" />
+  <a
+    href="mailto:bpriyan18082004@gmail.com"
+    className="text-gray-700 hover:text-blue-500 text-sm sm:text-base"
+  >
+    bpriyan18082004@gmail.com
+  </a>
+</div>
               <div className="flex items-center">
                 <FaMapMarkerAlt className="text-gray-600 mr-4 text-xl" />
                 <span className="text-gray-700">
