@@ -4,14 +4,19 @@
         "title": "Attendance Portal",
         "description": "A web application for tracking student attendance using ReactJS, Node.js, and MySQL. It allows faculty to mark attendance and students to view their attendance records.",
         "image": "1",
-        "techStack": ["ReactJS", "Node JS", "MySQL", "Express"]
+        "techStack": ["ReactJS", "Node JS", "MySQL", "Express"],
+        "liveLink" :"https://learnathon.bitsathy.ac.in/attendance",
+        "githubLink":"https://github.com/Priyadarshan-B/Attendance"
     },
     {
         "id": 2,
         "title": "Inventory Management (BestShop)",
         "description": "A platform for managing inventory in a retail environment, built using ReactJS, Node.js, and MySQL. It includes features for tracking stock levels, adding products, and managing orders.",
         "image": "2",
-        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS"]
+        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS"],
+        "liveLink" :"https://app.bestshopsathy.in",
+        "githubLink":"https://github.com/Priyadarshan-B/bestshop_update"
+
     },
     {
         "id": 3,
