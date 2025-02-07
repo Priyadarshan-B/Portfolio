@@ -113,7 +113,7 @@ const Skills = () => {
             </motion.button>
           ))}
         </div>
-        <div className="skills-main" data-aos="fade-left">
+        <div className="skills-main" data-aos="zoom-in">
           <AnimatePresence>
             {activeGroup && (
               <motion.div

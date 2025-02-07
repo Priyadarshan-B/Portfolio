@@ -61,7 +61,7 @@ const App = () => {
 
           <div
             id="project"
-            className="section py-16 bg-gray-300 flex items-center justify-center"
+            className="section pt-16 bg-gray-300 flex items-center justify-center"
             style={{ backgroundColor: "#effbf8" }}
           >
             <Project />

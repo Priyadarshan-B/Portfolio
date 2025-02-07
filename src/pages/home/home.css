@@ -105,13 +105,42 @@
     object-fit: cover;
   }
   
-  
     @media (max-width: 768px) {
       .modal-container{
-      width: 95%;  /* Increase the width for mobile */
-      height: 50%;  /* Adjust height for mobile */
-      max-width: 500px;  /* Limit the max width on mobile */
-      max-height: 40vh;  /* Limit height for mobile */
+      width: 95%; 
+      height: 50%; 
+      max-width: 500px;  
+      max-height: 40vh;  
     }
   }
   
+.modal-container {
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  height: 80vh;
+  margin: auto;
+  margin-top: 20px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Viewer area that scrolls if content overflows */
+.modal-viewer {
+  flex: 1;
+  overflow: auto;
+}
+
+/* Optional: Adjust button spacing for mobile */
+@media (max-width: 480px) {
+  .modal-container {
+    padding: 0.5rem;
+  }
+  .modal-viewer {
+    padding: 0.5rem;
+  }
+}
