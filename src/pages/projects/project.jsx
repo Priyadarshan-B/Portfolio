@@ -30,7 +30,24 @@ const modalStyle = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '90%',
-  maxWidth: 800,
+  height: '90%',
+  maxWidth: 900,
+  maxHeight: 700,
+  bgcolor: 'background.paper',
+  borderRadius: 4,
+  boxShadow: 24,
+  p: 4,
+  overflowY: 'auto', 
+};
+const modalPreviewStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '90%',
+  height: '90%',
+  maxWidth: 500,
+  maxHeight: 500,
   bgcolor: 'background.paper',
   borderRadius: 4,
   boxShadow: 24,
@@ -60,11 +77,17 @@ const Project = () => {
   return (
     <div className="min-h-screen w-full py-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center" data-aos="fade-right">
+        <h1
+          className="text-3xl font-bold text-gray-900 mb-8 text-center"
+          data-aos="fade-right"
+        >
           Projects
         </h1>
 
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3" data-aos="fade-up">
+        <div
+          className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          data-aos="fade-up"
+        >
           {projectsData.map((project) => {
             const projectImages = images[project.image];
             const thumbnail = projectImages ? projectImages[0] : '';
@@ -77,13 +100,19 @@ const Project = () => {
                 onClick={() => handleOpen(project)}
               >
                 <div className="relative transform transition-transform duration-200 hover:scale-110">
-                  <img src={thumbnail} alt={project.title} className="h-48 w-full object-cover" />
+                  <img
+                    src={thumbnail}
+                    alt={project.title}
+                    className="h-48 w-full object-cover"
+                  />
                 </div>
                 <div className="p-6 transform transition-transform duration-200 hover:scale-105">
                   <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
                     {project.title}
                   </div>
-                  <p className="mt-2 text-gray-500">{project.description}</p>
+                  <p className="line-clamp-4 mt-2 text-gray-500">
+                    {project.description}
+                  </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.techStack.map((tech, index) => (
                       <span
@@ -100,7 +129,12 @@ const Project = () => {
           })}
         </div>
 
-        <Modal open={open} onClose={handleClose} aria-labelledby="project-modal-title" aria-describedby="project-modal-description">
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="project-modal-title"
+          aria-describedby="project-modal-description"
+        >
           <Box sx={modalStyle}>
             {selectedProject && (
               <>
@@ -110,13 +144,16 @@ const Project = () => {
                 <p id="project-modal-description" className="mb-4">
                   {selectedProject.description}
                 </p>
-                <div className="grid grid-cols-2 gap-4 mb-4">
+                <div
+                  className="flex flex-col flex-nowrap gap-6 mb-4 
+                             md:grid md:grid-cols-2  md:overflow-x-visible"
+                >
                   {(images[selectedProject.image] || []).map((img, idx) => (
                     <img
                       key={idx}
                       src={img}
                       alt={`${selectedProject.title} screenshot ${idx + 1}`}
-                      className="object-cover w-full h-32 rounded-md cursor-pointer"
+                      className="object-cover w-full h-48 rounded-md cursor-pointer"
                       onClick={() => handleImageClick(img)}
                     />
                   ))}
@@ -150,8 +187,14 @@ const Project = () => {
 
         {previewImage && (
           <Modal open={true} onClose={() => setPreviewImage(null)}>
-            <Box sx={{ ...modalStyle, maxWidth: '90%', maxHeight: '90%' }}>
-              <img src={previewImage} alt="Preview" className="w-full h-full object-contain" />
+            <Box sx={{ ...modalPreviewStyle, maxWidth: '90%', maxHeight: '90%' }}>
+              <img
+                src={previewImage}
+                alt="Preview"
+                className="w-full h-full object-contain"
+                height={100}
+                width={100}
+              />
             </Box>
           </Modal>
         )}

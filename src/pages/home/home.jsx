@@ -81,40 +81,51 @@ const Home = () => {
         >
           Download CV
         </button>
-        <div className="mt-6 p-6  bg-white rounded-lg shadow-sm flex gap-8 justify-center" data-aos='fade-down'>
-        <a
-          href="https://github.com/Priyadarshan-B/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-700 hover:text-green-600 text-2xl transition"
-        >
-          <FaGithub />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/priyadarshan-b-7b05a9271/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-700 hover:text-blue-500 text-2xl transition"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://www.instagram.com/_priyan_2004?igsh=N3V6anY5NjRsazAz"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-700 hover:text-pink-500 text-2xl transition"
-        >
-          <FaInstagram />
-        </a>
-        <a
-          href="https://leetcode.com/u/priyadarshan18824/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-700 hover:text-orange-500 text-2xl transition"
-        >
-          <SiLeetcode />
-        </a>
-      </div>
+        <div
+  className="mt-6 p-6 rounded-lg  flex flex-no-wrap gap-4 justify-center"
+  data-aos="fade-down"
+>
+  <a
+    href="https://github.com/Priyadarshan-B/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-md text-gray-700 hover:text-green-600 hover:bg-green-100 transition transform duration-200"
+    data-aos="zoom-in"
+  >
+    <FaGithub />
+  </a>
+  <a
+    href="https://www.linkedin.com/in/priyadarshan-b-7b05a9271/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-md text-gray-700 hover:text-blue-500 hover:bg-blue-100 transition transform duration-200"
+    data-aos="zoom-in"
+    data-aos-delay="100"
+  >
+    <FaLinkedin />
+  </a>
+  <a
+    href="https://www.instagram.com/_priyan_2004?igsh=N3V6anY5NjRsazAz"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-md text-gray-700 hover:text-pink-500 hover:bg-pink-100 transition transform duration-200"
+    data-aos="zoom-in"
+    data-aos-delay="200"
+  >
+    <FaInstagram />
+  </a>
+  <a
+    href="https://leetcode.com/u/priyadarshan18824/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-md text-gray-700 hover:text-orange-500 hover:bg-orange-100 transition transform duration-200"
+    data-aos="zoom-in"
+    data-aos-delay="300"
+  >
+    <SiLeetcode />
+  </a>
+</div>
+
       </div>
 
       <div data-aos="fade-up" className="md:w-1/2 flex justify-center md:space-x-4">

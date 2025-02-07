@@ -118,7 +118,7 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
+                  className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 h-32 resize-none"
                   required
                 ></textarea>
               </div>
@@ -143,7 +143,10 @@ const Contact = () => {
             >
               Contact Information
             </h2>
-            <div className="space-y-6 bg-white p-4 rounded-lg flex-col" data-aos="fade-left">
+            <div
+              className="space-y-6 bg-white p-4 rounded-lg flex-col"
+              data-aos="fade-left"
+            >
               <div className="flex items-center">
                 <FaPhone className="text-gray-600 mr-4 text-xl" />
                 <a
@@ -154,33 +157,33 @@ const Contact = () => {
                 </a>
               </div>
               <div className="flex items-center">
-  <FaEnvelope className="text-gray-600 mr-4 text-base sm:text-xl" />
-  <a
-    href="mailto:bpriyan18082004@gmail.com"
-    className="text-gray-700 hover:text-blue-500 text-sm sm:text-base"
-  >
-    bpriyan18082004@gmail.com
-  </a>
-</div>
+                <FaEnvelope className="text-gray-600 mr-4 text-base sm:text-xl" />
+                <a
+                  href="mailto:bpriyan18082004@gmail.com"
+                  className="text-gray-700 hover:text-blue-500 text-sm sm:text-base"
+                >
+                  bpriyan18082004@gmail.com
+                </a>
+              </div>
               <div className="flex items-center">
                 <FaMapMarkerAlt className="text-gray-600 mr-4 text-xl" />
                 <span className="text-gray-700">
                   43, AVP Layout, Thirumurugan Poondi, Tirupur
                 </span>
               </div>
-              
             </div>
             <br />
-            <iframe data-aos="fade-up"
-                title="location-map"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d628.7256305306181!2d77.30500567869308!3d11.173899484638332!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba906f722392849%3A0x201d2d9eb94e8d9a!2sA.V.P%20Layout%2C%20Gandhinagar%2C%20Velampalayam%2C%20Tiruppur%2C%20Tamil%20Nadu%20641603!5e1!3m2!1sen!2sin!4v1736441554864!5m2!1sen!2sin"
-                width="100%"
-                height="200"
-                style={{ border: "0", borderRadius: "8px" }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <iframe
+              data-aos="fade-up"
+              title="location-map"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d628.7256305306181!2d77.30500567869308!3d11.173899484638332!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba906f722392849%3A0x201d2d9eb94e8d9a!2sA.V.P%20Layout%2C%20Gandhinagar%2C%20Velampalayam%2C%20Tiruppur%2C%20Tamil%20Nadu%20641603!5e1!3m2!1sen!2sin!4v1736441554864!5m2!1sen!2sin"
+              width="100%"
+              height="200"
+              style={{ border: "0", borderRadius: "8px" }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
