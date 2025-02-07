@@ -50,11 +50,20 @@ const Navbar = () => {
           <li className="w-full md:w-auto text-center">
             <button
               className="nav-link text-gray-950 focus:outline-none block md:inline"
+              onClick={() => scrollToSection("skill")}
+            >
+              Skills
+            </button>
+          </li>
+          <li className="w-full md:w-auto text-center">
+            <button
+              className="nav-link text-gray-950 focus:outline-none block md:inline"
               onClick={() => scrollToSection("project")}
             >
               Projects
             </button>
           </li>
+        
           <li className="w-full md:w-auto text-center">
             <button
               className="nav-link text-gray-950 focus:outline-none block md:inline"

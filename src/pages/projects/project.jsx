@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import projectsData from '../../components/projects.json';
-
-// Import images for project 1
 import att1 from '../../assets/att1.png';
 import att1_2 from '../../assets/att1.png';
 import att1_3 from '../../assets/att1.png';
@@ -31,8 +29,8 @@ const modalStyle = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '80%',
-  maxWidth: 600,
+  width: '90%',
+  maxWidth: 800,
   bgcolor: 'background.paper',
   borderRadius: 4,
   boxShadow: 24,
@@ -42,6 +40,7 @@ const modalStyle = {
 const Project = () => {
   const [open, setOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
 
   const handleOpen = (project) => {
     setSelectedProject(project);
@@ -51,22 +50,21 @@ const Project = () => {
   const handleClose = () => {
     setOpen(false);
     setSelectedProject(null);
+    setPreviewImage(null);
+  };
+
+  const handleImageClick = (image) => {
+    setPreviewImage(image);
   };
 
   return (
     <div className="min-h-screen w-full py-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1
-          className="text-3xl font-bold text-gray-900 mb-8 text-center"
-          data-aos="fade-right"
-        >
+        <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center" data-aos="fade-right">
           Projects
         </h1>
 
-        <div
-          className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-          data-aos="fade-up"
-        >
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3" data-aos="fade-up">
           {projectsData.map((project) => {
             const projectImages = images[project.image];
             const thumbnail = projectImages ? projectImages[0] : '';
@@ -79,11 +77,7 @@ const Project = () => {
                 onClick={() => handleOpen(project)}
               >
                 <div className="relative transform transition-transform duration-200 hover:scale-110">
-                  <img
-                    src={thumbnail}
-                    alt={project.title}
-                    className="h-48 w-full object-cover"
-                  />
+                  <img src={thumbnail} alt={project.title} className="h-48 w-full object-cover" />
                 </div>
                 <div className="p-6 transform transition-transform duration-200 hover:scale-105">
                   <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
@@ -106,12 +100,7 @@ const Project = () => {
           })}
         </div>
 
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="project-modal-title"
-          aria-describedby="project-modal-description"
-        >
+        <Modal open={open} onClose={handleClose} aria-labelledby="project-modal-title" aria-describedby="project-modal-description">
           <Box sx={modalStyle}>
             {selectedProject && (
               <>
@@ -127,7 +116,8 @@ const Project = () => {
                       key={idx}
                       src={img}
                       alt={`${selectedProject.title} screenshot ${idx + 1}`}
-                      className="object-cover w-full h-32 rounded-md"
+                      className="object-cover w-full h-32 rounded-md cursor-pointer"
+                      onClick={() => handleImageClick(img)}
                     />
                   ))}
                 </div>
@@ -157,6 +147,14 @@ const Project = () => {
             )}
           </Box>
         </Modal>
+
+        {previewImage && (
+          <Modal open={true} onClose={() => setPreviewImage(null)}>
+            <Box sx={{ ...modalStyle, maxWidth: '90%', maxHeight: '90%' }}>
+              <img src={previewImage} alt="Preview" className="w-full h-full object-contain" />
+            </Box>
+          </Modal>
+        )}
       </div>
     </div>
   );
