@@ -78,7 +78,7 @@ const Project = () => {
     <div className="min-h-screen w-full py-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1
-          className="text-3xl font-bold text-gray-900 mb-8 text-center"
+          className="text-3xl font-bold text-gray-900 dark:text-fontDark mb-8 text-center"
           data-aos="fade-right"
         >
           Projects
@@ -96,7 +96,7 @@ const Project = () => {
               <div
                 key={project.id}
                 data-aos="flip-right"
-                className="bg-white shadow-lg rounded-md overflow-hidden transform transition-transform duration-200 hover:scale-110 cursor-pointer"
+                className="bg-white dark:bg-darkModal shadow-lg rounded-md overflow-hidden transform transition-transform duration-200 hover:scale-110 cursor-pointer"
                 onClick={() => handleOpen(project)}
               >
                 <div className="relative transform transition-transform duration-200 hover:scale-110">
@@ -110,7 +110,7 @@ const Project = () => {
                   <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
                     {project.title}
                   </div>
-                  <p className="line-clamp-4 mt-2 text-gray-500">
+                  <p className="line-clamp-4 mt-2 text-gray-500 dark:text-smallFontDark">
                     {project.description}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">

@@ -1,15 +1,4 @@
-/* .container:hover .card {
-    transform: scale(0.9);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .container:hover .card:hover {
-    transform: scale(1.1);
-  }
 
-   */
-
-   /* Container & Title */
 .skills-container {
   width: 100%;
   padding: 2.5rem;
@@ -22,7 +11,6 @@
   margin-bottom: 2rem;
 }
 
-/* Layout: Sidebar on left, content on right */
 .skills-content {
   display: flex;
   gap: 2rem;
@@ -30,7 +18,6 @@
   margin: 0 auto;
 }
 
-/* Sidebar for Group Names */
 .skills-sidebar {
   display: flex;
   flex-direction: column;
@@ -76,7 +63,7 @@
   gap: 1rem;
   justify-content: center;
   padding: 0.75rem 1rem;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-decoration: none;

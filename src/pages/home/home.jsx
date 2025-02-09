@@ -89,17 +89,17 @@ const Home = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center h-full w-full px-24 text-center md:text-left">
       <div className="mb-6 md:mb-0 md:w-1/2">
-        <h1 className="text-4xl md:text-5xl font-semibold text-gray-900" data-aos="fade-right">
+        <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 dark:text-fontDark" data-aos="fade-right">
           Hi, I am Priyadarshan<br />
           <span className="txt font-light">{currentWord}</span>
           <span className="blink text-blue-200 animate-blink">|</span>
         </h1>
-        <p className="mt-4 text-lg text-gray-600" data-aos="fade-right">
+        <p className="mt-4 text-lg text-gray-600 dark:text-smallFontDark" data-aos="fade-right">
           Welcome to my portfolio! I craft innovative, user-friendly websites and applications that bring your ideas to life with precision and creativity.
         </p>
         <button
           data-aos="fade-up"
-          className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition"
+          className="mt-6 px-6 py-3 bg-blue-500 dark:bg-buttonDark text-white rounded-lg shadow-lg hover:bg-blue-600 dark:hover:bg-buttonDark transition"
           onClick={openModal}
         >
           Download CV
@@ -112,16 +112,16 @@ const Home = () => {
             href="https://github.com/Priyadarshan-B/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-md text-gray-700 hover:text-green-600 hover:bg-green-100 transition transform duration-200"
+            className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white dark:bg-gray-800 shadow-md text-gray-700 dark:text-fontDark hover:text-green-600 dark:hover:text-green-400 hover:bg-green-100 dark:hover:bg-gray-700 transition transform duration-200"
             data-aos="zoom-in"
           >
             <FaGithub />
           </a>
           <a
-            href="https://www.linkedin.com/in/priyadarshan-b-7b05a9271/"
+            href="https://www.linkedin.com/in/priyan1808"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-md text-gray-700 hover:text-blue-500 hover:bg-blue-100 transition transform duration-200"
+            className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white dark:bg-gray-800 shadow-md text-gray-700 dark:text-fontDark hover:text-blue-500 dark:hover:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-700 transition transform duration-200"
             data-aos="zoom-in"
             data-aos-delay="100"
           >
@@ -131,17 +131,17 @@ const Home = () => {
             href="https://www.instagram.com/_priyan_2004?igsh=N3V6anY5NjRsazAz"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-md text-gray-700 hover:text-pink-500 hover:bg-pink-100 transition transform duration-200"
+            className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white dark:bg-gray-800 shadow-md text-gray-700 dark:text-fontDark hover:text-pink-500 dark:hover:text-pink-300 hover:bg-pink-100 dark:hover:bg-gray-700 transition transform duration-200"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
             <FaInstagram />
           </a>
           <a
-            href="https://leetcode.com/u/priyadarshan18824/"
+            href="https://leetcode.com/u/priyan18824/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white shadow-md text-gray-700 hover:text-orange-500 hover:bg-orange-100 transition transform duration-200"
+            className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-white dark:bg-gray-800 shadow-md text-gray-700 dark:text-fontDark hover:text-orange-500 dark:hover:text-orange-300 hover:bg-orange-100 dark:hover:bg-gray-700 transition transform duration-200"
             data-aos="zoom-in"
             data-aos-delay="300"
           >

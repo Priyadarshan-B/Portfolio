@@ -10,6 +10,7 @@ import Project from "./pages/projects/project";
 import Contact from "./pages/contact/contact";
 import Skill from "./pages/skill/skill";
 import './components/loader.css'
+import ThemeToggle from "./components/theme/toggle";
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,7 +29,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className={`app-container`}>
+    <div className="app-container bg-[linear-gradient(140deg,#eceff7,#bccada,#c1cdde)] dark:bg-[linear-gradient(140deg,theme('colors.darkBackground'),#282c34,#363b49)] text-fontLight dark:text-fontDark">
+       {/* <ThemeToggle /> */}
       {isLoaded ? (
         <>
           <div className="cursor">
@@ -38,39 +40,34 @@ const App = () => {
           <div
             id="home"
             className="section pt-32 h-screen flex items-center justify-center"
-            style={{ backgroundColor: "#effbf8" }}
           >
             <Home />
           </div>
 
           <div
             id="about"
-            className="section pt-24 bg-gray-200 flex items-center justify-center"
-            style={{ backgroundColor: "#effbf8" }}
+            className="section pt-24  flex items-center justify-center"
           >
             <About />
           </div>
 
           <div
             id="skill"
-            className="section pt-16 bg-gray-300 flex items-center justify-center"
-            style={{ backgroundColor: "#effbf8" }}
+            className="section pt-16 flex items-center justify-center"
           >
             <Skill />
           </div>
 
           <div
             id="project"
-            className="section pt-16 bg-gray-300 flex items-center justify-center"
-            style={{ backgroundColor: "#effbf8" }}
+            className="section pt-16  flex items-center justify-center"
           >
             <Project />
           </div>
 
           <div
             id="contact"
-            className="section pt-16 pb-1 bg-gray-300 flex items-center justify-center"
-            style={{ backgroundColor: "#effbf8" }}
+            className="section pt-16 pb-1 flex items-center justify-center"
           >
             <Contact />
           </div>

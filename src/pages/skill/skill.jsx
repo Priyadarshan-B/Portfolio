@@ -129,7 +129,7 @@ const Skills = () => {
                     href={skill.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="skill-item"
+                    className="skill-item bg-white dark:bg-darkModal"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}

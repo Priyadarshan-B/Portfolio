@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: "Roboto Mono", serif;
+  /* font-family: "Roboto Mono", serif; */
+  font-family: "Montserrat", serif;
       line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -15,12 +17,18 @@
 }
 
 *{
-  font-family: "Roboto Mono", serif;
+  /* font-family: "Roboto Mono", serif; */
+  font-family: "Montserrat", serif;
       box-sizing: border-box;
 }
 
 body {
-  font-family: "Roboto Mono", serif;
+  /* background: linear-gradient(140deg, 
+    #eceff7, 
+    #bccada, 
+    #c1cdde); */
+  /* font-family: "Roboto Mono", serif; */
+  font-family: "Montserrat", serif;
         margin: 0;
 }
 

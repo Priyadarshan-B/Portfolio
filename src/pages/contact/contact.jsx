@@ -62,11 +62,11 @@ const Contact = () => {
       className="min-h-screen w-full flex items-center justify-center px-4"
       data-aos="fade-up"
     >
-      <div className="w-full max-w-5xl bg-white shadow-sm rounded-lg overflow-hidden">
+      <div className="w-full max-w-5xl bg-white dark:bg-darkModal shadow-sm rounded-lg overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2" data-aos="fade-right">
           <div className="p-6 md:p-8">
             <h2
-              className="text-3xl font-semibold text-gray-900 mb-4"
+              className="text-3xl font-semibold text-gray-900 dark:text-fontDark mb-4"
               data-aos="fade-left"
             >
               Send a Message
@@ -75,7 +75,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-gray-700 text-sm font-bold mb-2"
+                  className="block text-gray-700 dark:text-smallFontDark text-sm font-bold mb-2"
                 >
                   Name
                 </label>
@@ -85,14 +85,14 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700  focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-darkBox dark:border-gray-700 dark:text-fontDark"
                   required
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-gray-700 text-sm font-bold mb-2"
+                  className="block text-gray-700 dark:text-smallFontDark text-sm font-bold mb-2"
                 >
                   Email
                 </label>
@@ -102,14 +102,14 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-darkBox dark:border-gray-700 dark:text-fontDark"
                   required
                 />
               </div>
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-gray-700 text-sm font-bold mb-2"
+                  className="block text-gray-700 dark:text-smallFontDark text-sm font-bold mb-2"
                 >
                   Message
                 </label>
@@ -118,14 +118,14 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 h-32 resize-none"
+                  className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 h-32 resize-none dark:bg-darkBox dark:border-gray-700 dark:text-fontDark"
                   required
                 ></textarea>
               </div>
               <div>
                 <button
                   type="submit"
-                  className={`w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                  className={`w-full bg-blue-500 dark:bg-buttonDark hover:bg-blue-700 dark:hover:bg-buttonDark text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                     isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                   disabled={isSubmitting}
@@ -136,23 +136,20 @@ const Contact = () => {
             </form>
           </div>
 
-          <div className="bg-gray-100 p-6 md:p-8">
+          <div className="bg-gray-100 dark:bg-darkModal p-6 md:p-8">
             <h2
-              className="text-3xl font-semibold text-gray-900 mb-4"
+              className="text-3xl font-semibold text-gray-900 dark:text-fontDark mb-4"
               data-aos="fade-right"
             >
               Contact Information
             </h2>
             <div
-              className="space-y-6 bg-white p-4 rounded-lg flex-col"
+              className="space-y-6 bg-white dark:bg-darkBox p-4 rounded-lg flex-col"
               data-aos="fade-left"
             >
               <div className="flex items-center">
                 <FaPhone className="text-gray-600 mr-4 text-xl" />
-                <a
-                  href="tel:+919789762908"
-                  className="text-gray-700 hover:text-blue-500"
-                >
+                <a href="tel:+919789762908" className=" hover:text-blue-500">
                   +91 9789762908
                 </a>
               </div>
@@ -160,16 +157,14 @@ const Contact = () => {
                 <FaEnvelope className="text-gray-600 mr-4 text-base sm:text-xl" />
                 <a
                   href="mailto:bpriyan18082004@gmail.com"
-                  className="text-gray-700 hover:text-blue-500 text-sm sm:text-base"
+                  className=" hover:text-blue-500 text-sm sm:text-base"
                 >
                   bpriyan18082004@gmail.com
                 </a>
               </div>
               <div className="flex items-center">
                 <FaMapMarkerAlt className="text-gray-600 mr-4 text-xl" />
-                <span className="text-gray-700">
-                  43, AVP Layout, Thirumurugan Poondi, Tirupur
-                </span>
+                <span>43, AVP Layout, Thirumurugan Poondi, Tirupur</span>
               </div>
             </div>
             <br />
