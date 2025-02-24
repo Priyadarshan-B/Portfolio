@@ -19,7 +19,6 @@ const Navbar = () => {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-11/12 max-w-6xl z-50 bg-white/90 dark:bg-gray-900 backdrop-blur-sm shadow-lg rounded-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-800/20">
       <div className="mx-auto flex justify-between items-center py-2 px-6">
-        {/* Mobile Menu Button (hidden on desktop) */}
         <div className="md:hidden z-50">
           <IconButton 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -34,7 +33,7 @@ const Navbar = () => {
         </div>
 
         <ul
-          className={`absolute md:relative top-full md:top-auto left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 w-11/12 md:w-auto mt-2 md:mt-0 bg-white/70 dark:bg-gray-900/90 md:bg-transparent  md:backdrop-blur-none shadow-md md:shadow-none rounded-lg md:rounded-none
+          className={`absolute md:relative top-full md:top-auto left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 w-11/12 md:w-auto mt-2 md:mt-0 bg-white/95 dark:bg-gray-900/95 md:bg-transparent  md:backdrop-blur-none shadow-md md:shadow-none rounded-lg md:rounded-none
             flex flex-col md:flex-row items-center md:justify-between flex-1 md:space-x-6 lg:space-x-8
             py-4 md:py-0 space-y-2 md:space-y-0 mx-4
             transition-all duration-300 ease-out ${

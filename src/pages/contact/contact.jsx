@@ -60,7 +60,7 @@ const Contact = () => {
   return (
     <div
       className="min-h-screen w-full flex items-center justify-center px-4"
-      data-aos="fade-up"
+      // data-aos="fade-up"
     >
       <div className="w-full max-w-5xl bg-white dark:bg-darkModal shadow-sm rounded-lg overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2" data-aos="fade-right">
