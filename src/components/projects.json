@@ -16,27 +16,30 @@
         "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS"],
         "liveLink" :"https://app.bestshopsathy.in",
         "githubLink":"https://github.com/Priyadarshan-B/bestshop_update"
-
     },
     {
         "id": 3,
         "title": "E-Learning Platform",
         "description": "An online platform for e-learning with course management, quizzes, and student tracking features. It allows students to enroll in courses and complete quizzes, with performance tracking.",
         "image": "3",
-        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS","Sequialize(ORM)"]
+        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS","Sequelize(ORM)"],
+        "githubLink":"https://github.com/Priyadarshan-B/TechLehren"
     },
     {
         "id": 4,
         "title": "Travel Dot",
         "description": "A travel booking platform that allows users to search for destinations, book flights, and hotels. Built with ReactJS and Node.js for an intuitive user experience and smooth interaction.",
         "image": "4",
-        "techStack": ["ReactJS", "Node JS", "MongoDB", "Express", "SASS"]
+        "techStack": ["ReactJS", "Node JS", "MongoDB", "Express", "SCSS"],
+        "githubLink":"https://github.com/Priyadarshan-B/Travel_Dot"
     },
     {
         "id":5,
         "title":"Legal Aid Clinic (SOEL)",
         "description":"A Legal Aid Clinic portal for SOEL, built with React and Tailwind CSS, offering a modern, user-friendly platform for managing cases and facilitating collaboration between students, faculty, and clients.",
         "image":"5",
-        "techStack":["ReactJS","Tailwind CSS"]
+        "techStack":["ReactJS","Tailwind CSS"],
+        "liveLink" :"https://lacsoel.netlify.app/",
+        "githubLink":"https://github.com/Priyadarshan-B/leagalAid"
     }
 ]

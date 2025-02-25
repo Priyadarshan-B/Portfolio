@@ -3,25 +3,37 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import projectsData from '../../components/projects.json';
 import att1 from '../../assets/att1.png';
-import att1_2 from '../../assets/att1.png';
-import att1_3 from '../../assets/att1.png';
-import att1_4 from '../../assets/att1.png';
+import att1_2 from '../../assets/att2.png';
+import att1_3 from '../../assets/att3.png';
+import att1_4 from '../../assets/att4.png';
 
-import bs from '../../assets/bs.png';
-import bs_2 from '../../assets/bs.png';
-import bs_3 from '../../assets/bs.png';
-import bs_4 from '../../assets/bs.png';
+import bs from '../../assets/bs1.png';
+import bs_2 from '../../assets/bs2.png';
+import bs_3 from '../../assets/bs3.png';
+import bs_4 from '../../assets/bs4.png';
 
-import learn from '../../assets/learn.png';
+import learn_1 from '../../assets/l1.png';
+import learn_2 from '../../assets/l2.png';
+import learn_3 from '../../assets/l3.png';
+import learn_4 from '../../assets/l4.png';
+
 import dot from '../../assets/dot.png';
+import dot1 from '../../assets/dot2.png';
+import dot2 from '../../assets/dot3.png';
+import dot3 from '../../assets/dot4.png';
+
 import la from '../../assets/la.png';
+import la_1 from '../../assets/la2.png';
+import la_2 from '../../assets/la3.png';
+import la_3 from '../../assets/la4.png';
+
 
 const images = {
   1: [att1, att1_2, att1_3, att1_4],
   2: [bs, bs_2, bs_3, bs_4],
-  3: [learn],
-  4: [dot],
-  5: [la],
+  3: [learn_1, learn_2, learn_3, learn_4],
+  4: [dot, dot1, dot2, dot3],
+  5: [la, la_1, la_2, la_3],
 };
 
 const modalStyle = {

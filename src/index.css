@@ -20,7 +20,10 @@
   /* font-family: "Roboto Mono", serif; */
   font-family: "Montserrat", serif;
       box-sizing: border-box;
+      /* cursor: none; */
+
 }
+
 
 body {
   /* background: linear-gradient(140deg, 

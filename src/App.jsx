@@ -10,7 +10,6 @@ import Project from "./pages/projects/project";
 import Contact from "./pages/contact/contact";
 import Skill from "./pages/skill/skill";
 import './components/loader.css'
-import ThemeToggle from "./components/theme/toggle";
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,11 +29,10 @@ const App = () => {
 
   return (
     <div className="app-container bg-[linear-gradient(140deg,#eceff7,#bccada,#c1cdde)] dark:bg-[linear-gradient(140deg,theme('colors.darkBackground'),#282c34,#363b49)] text-fontLight dark:text-fontDark">
-       {/* <ThemeToggle /> */}
       {isLoaded ? (
         <>
           <div className="cursor">
-            <CustomCursor />
+            {/* <CustomCursor /> */}
           </div>
           <Navbar />
           <div
@@ -75,7 +73,6 @@ const App = () => {
       ) : (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
     <div className="loader">
-      {/* Loader content */}
     </div>
   </div>
       )}

@@ -148,7 +148,7 @@ const Contact = () => {
               data-aos="fade-left"
             >
               <div className="flex items-center">
-                <FaPhone className="text-gray-600 mr-4 text-xl" />
+                <FaPhone className="text-gray-600 mr-4 text-xl rotate-90" />
                 <a href="tel:+919789762908" className=" hover:text-blue-500">
                   +91 9789762908
                 </a>
