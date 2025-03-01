@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
+import { Card, CardBody, CardHeader,  } from "@heroui/react";
+import { Chip } from "@heroui/chip";
+import Button from '../../components/button/button';
+import { Modal, ModalContent } from "@heroui/modal";
+import "aos/dist/aos.css";
 import projectsData from '../../components/projects.json';
 import att1 from '../../assets/att1.png';
 import att1_2 from '../../assets/att2.png';
@@ -36,42 +39,13 @@ const images = {
   5: [la, la_1, la_2, la_3],
 };
 
-const modalStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '90%',
-  height: '90%',
-  maxWidth: 900,
-  maxHeight: 700,
-  bgcolor: 'background.paper',
-  borderRadius: 4,
-  boxShadow: 24,
-  p: 4,
-  overflowY: 'auto', 
-};
-const modalPreviewStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '90%',
-  height: '90%',
-  maxWidth: 500,
-  maxHeight: 500,
-  bgcolor: 'background.paper',
-  borderRadius: 4,
-  boxShadow: 24,
-  p: 4,
-};
-
 const Project = () => {
   const [open, setOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
 
   const handleOpen = (project) => {
+    console.log("card clicked")
     setSelectedProject(project);
     setOpen(true);
   };
@@ -95,119 +69,107 @@ const Project = () => {
         >
           Projects
         </h1>
-
         <div
           className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           data-aos="fade-up"
         >
           {projectsData.map((project) => {
             const projectImages = images[project.image];
-            const thumbnail = projectImages ? projectImages[0] : '';
+            const thumbnail = projectImages ? projectImages[0] : "";
 
             return (
-              <div
+              <Card
                 key={project.id}
+                className=" cursor-pointer"
+                onPress={() => handleOpen(project)}
+                isPressable
+                shadow='sm'
                 data-aos="flip-right"
-                className="bg-white dark:bg-darkModal shadow-lg rounded-md overflow-hidden transform transition-transform duration-200 hover:scale-110 cursor-pointer"
-                onClick={() => handleOpen(project)}
               >
-                <div className="relative transform transition-transform duration-200 hover:scale-110">
+                <CardHeader className="p-0">
                   <img
                     src={thumbnail}
                     alt={project.title}
-                    className="h-48 w-full object-cover"
+                    className="h-48 w-full object-cover rounded-t-md"
                   />
-                </div>
-                <div className="p-6 transform transition-transform duration-200 hover:scale-105">
-                  <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                </CardHeader>
+                <CardBody className="p-6">
+                  <h3 className="text-lg font-semibold text-indigo-500">
                     {project.title}
-                  </div>
+                  </h3>
                   <p className="line-clamp-4 mt-2 text-gray-500 dark:text-smallFontDark">
                     {project.description}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.techStack.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 rounded-full text-xs font-medium bg-gray-200 text-gray-800 transform transition-transform duration-200 hover:scale-110"
-                      >
+                      <Chip key={index} variant="flat" color="primary" className="px-2 py-1 text-xs">
                         {tech}
-                      </span>
+                      </Chip>
                     ))}
                   </div>
-                </div>
-              </div>
+                </CardBody>
+              </Card>
             );
           })}
         </div>
 
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="project-modal-title"
-          aria-describedby="project-modal-description"
-        >
-          <Box sx={modalStyle}>
+        <Modal isOpen={open} size='4xl' placement='center' scrollBehavior='inside' onClose={handleClose} className="flex items-center justify-center p-4 sm:p-6">
+          <ModalContent className=" p-6 w-full max-w-3xl sm:max-w-4xl mx-auto rounded-md overflow-auto">
             {selectedProject && (
               <>
-                <h2 id="project-modal-title" className="text-2xl font-bold mb-4">
-                  {selectedProject.title}
-                </h2>
-                <p id="project-modal-description" className="mb-4">
-                  {selectedProject.description}
-                </p>
-                <div
-                  className="flex flex-col flex-nowrap gap-6 mb-4 
-                             md:grid md:grid-cols-2  md:overflow-x-visible"
-                >
+                <h2 className="text-2xl font-bold mb-4 text-center sm:text-left text-indigo-500">{selectedProject.title}</h2>
+                <p className="mb-4 text-sm sm:text-base">{selectedProject.description}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {(images[selectedProject.image] || []).map((img, idx) => (
                     <img
                       key={idx}
                       src={img}
                       alt={`${selectedProject.title} screenshot ${idx + 1}`}
-                      className="object-cover w-full h-48 rounded-md cursor-pointer"
+                      className="w-full h-40 sm:h-48 object-cover rounded-md cursor-pointer"
                       onClick={() => handleImageClick(img)}
                     />
                   ))}
                 </div>
-                <div className="flex justify-between">
+                <div className="mt-4 flex flex-col sm:flex-row justify-between gap-2 sm:gap-4">
                   {selectedProject.liveLink && (
-                    <a
-                      href={selectedProject.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
-                    >
-                      Live Demo
-                    </a>
+                    <Button
+                    as="a"
+                    href={selectedProject.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="primary"
+                    className="w-full sm:w-auto"
+                  >
+                    Live Link
+                  </Button>
                   )}
                   {selectedProject.githubLink && (
-                    <a
+                    
+                      <Button 
+                      color="success"
+                      variant="flat"
+                      size="md"
+                        as="a"
                       href={selectedProject.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition-colors"
-                    >
-                      GitHub
-                    </a>
+                      className="w-full sm:w-auto"
+                      >
+                        GitHub
+                      </Button>
+                   
                   )}
                 </div>
               </>
             )}
-          </Box>
+          </ModalContent>
         </Modal>
 
         {previewImage && (
-          <Modal open={true} onClose={() => setPreviewImage(null)}>
-            <Box sx={{ ...modalPreviewStyle, maxWidth: '90%', maxHeight: '90%' }}>
-              <img
-                src={previewImage}
-                alt="Preview"
-                className="w-full h-full object-contain"
-                height={100}
-                width={100}
-              />
-            </Box>
+          <Modal isOpen={true} placement='center' size='5xl' onClose={() => setPreviewImage(null)} className="flex items-center justify-center p-4 sm:p-6">
+            <ModalContent className="p-4 w-full max-w-lg sm:max-w-xl mx-auto">
+              <img src={previewImage} alt="Preview" className="w-full h-auto rounded-md" />
+            </ModalContent>
           </Modal>
         )}
       </div>

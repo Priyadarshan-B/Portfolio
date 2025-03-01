@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import Button from "../../components/button/button"
 import { SiLeetcode } from "react-icons/si";
 import { Modal } from "@mui/material";
 import "@react-pdf-viewer/core/lib/styles/index.css";
@@ -19,7 +20,6 @@ const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const defaultLayoutPluginInstance = defaultLayoutPlugin({
-    // sidebarTabs: [],
     renderToolbar: (Toolbar) => (
       <Toolbar>
         {(slots) => {
@@ -97,13 +97,14 @@ const Home = () => {
         <p className="mt-4 text-lg text-gray-600 dark:text-smallFontDark" data-aos="fade-right">
           Welcome to my portfolio! I craft innovative, user-friendly websites and applications that bring your ideas to life with precision and creativity.
         </p>
-        <button
-          data-aos="fade-up"
-          className="mt-6 px-6 py-3 bg-blue-500 dark:bg-buttonDark text-white rounded-lg shadow-lg hover:bg-blue-600 dark:hover:bg-buttonDark transition"
-          onClick={openModal}
-        >
-          Download CV
-        </button>
+        <div data-aos="fade-up">
+          <Button
+            className="mt-6 px-6 py-3 "
+            onClick={openModal}
+          >
+            Download CV
+          </Button>
+        </div>
         <div
           className="mt-6 p-6 rounded-lg flex flex-no-wrap gap-4 justify-center"
           data-aos="fade-down"
@@ -172,12 +173,12 @@ const Home = () => {
               <Viewer fileUrl={samplePDF} plugins={[defaultLayoutPluginInstance]} />
             </Worker>
           </div>
-          <button
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition self-center"
+          <Button
+            className="mt-4 px-4 py-2"
             onClick={downloadPDF}
           >
             Download
-          </button>
+          </Button>
         </div>
       </Modal>
     </div>
