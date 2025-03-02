@@ -65,7 +65,7 @@ const Contact = () => {
     <div className="min-h-screen w-full flex items-center justify-center px-4">
       <div className="w-full max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-down">
-          <Card isPressable
+          <Card 
           >
             <CardHeader className="p-6 md:p-8">
               <h2 className="text-3xl font-semibold" data-aos="fade-left">

@@ -1,68 +1,85 @@
-import React, { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import { IconButton } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle
+} from "@heroui/react";
 import ThemeToggle from "../theme/toggle";
 import "./navbar.css";
 
-const Navbar = () => {
+const CustomNavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
+      setIsMenuOpen(false); // Close the menu when a nav item is clicked
     }
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !event.target.closest(".nextui-navbar-menu")) {
+        setIsMenuOpen(false); // Close the menu when clicking outside
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [isMenuOpen]);
+
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-11/12 max-w-6xl z-50 bg-white/90 dark:bg-gray-900 backdrop-blur-sm shadow-lg rounded-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-800/20">
-      <div className="mx-auto flex justify-between items-center py-2 px-6">
-        <div className="md:hidden z-50">
-          <IconButton 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? (
-              <CloseIcon className="text-gray-800 dark:text-gray-200" />
-            ) : (
-              <MenuIcon className="text-gray-800 dark:text-gray-200" />
-            )}
-          </IconButton>
-        </div>
+    <Navbar isBordered className="fixed top-4 left-1/2 -translate-x-1/2 w-11/12 max-w-6xl z-50 bg-white/90 dark:bg-gray-900 backdrop-blur-md shadow-lg rounded-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-800/20">
+      <NavbarBrand>
+        <span className="text-lg font-bold text-gray-800 dark:text-gray-200">Priyan</span>
+      </NavbarBrand>
 
-        <ul
-          className={`absolute md:relative top-full md:top-auto left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 w-11/12 md:w-auto mt-2 md:mt-0 bg-white/95 dark:bg-gray-900/95 md:bg-transparent  md:backdrop-blur-none shadow-md md:shadow-none rounded-lg md:rounded-none
-            flex flex-col md:flex-row items-center md:justify-between flex-1 md:space-x-6 lg:space-x-8
-            py-4 md:py-0 space-y-2 md:space-y-0 mx-4
-            transition-all duration-300 ease-out ${
-              isMenuOpen
-                ? "opacity-100 visible scale-100"
-                : "opacity-0 md:opacity-100 invisible md:visible scale-95 md:scale-100"
-            }`}
-        >
-          {['home', 'about', 'skill', 'project', 'contact'].map((section) => (
-            <li key={section} className="w-full md:w-auto">
-              <button
-                className={`w-full px-6 py-2 md:px-4 md:py-1 text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400
-                  font-medium rounded-md transition-all duration-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50
-                  text-lg md:text-base capitalize focus:outline-none focus:ring-2 focus:ring-indigo-500`}
-                onClick={() => scrollToSection(section)}
-              >
-                {section}
-              </button>
-            </li>
-          ))}
-        </ul>
+      <NavbarContent justify="end" className="hidden md:flex">
+        {["home", "about", "skill", "project", "contact"].map((section) => (
+          <NavbarItem key={section}>
+            <button
+              className="px-6 py-2 text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-all duration-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-lg capitalize"
+              onClick={() => scrollToSection(section)}
+            >
+              {section}
+            </button>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
 
-        {/* Theme Toggle */}
-        <div className="ml-4 md:ml-6">
-          <ThemeToggle />
-        </div>
-      </div>
-    </nav>
+      <NavbarMenuToggle
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        className="md:hidden"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      />
+
+      <NavbarMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        className="fixed top-0 left-0 w-1/2 h-full bg-white dark:bg-gray-900 shadow-lg flex flex-col items-center justify-center space-y-6 nextui-navbar-menu"
+      >
+        {["home", "about", "skill", "project", "contact"].map((section) => (
+          <NavbarMenuItem key={section}>
+            <button
+              className="w-full px-6 py-2 text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-all duration-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-lg capitalize"
+              onClick={() => scrollToSection(section)}
+            >
+              {section}
+            </button>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+
+      <NavbarItem>
+        <ThemeToggle />
+      </NavbarItem>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default CustomNavBar;

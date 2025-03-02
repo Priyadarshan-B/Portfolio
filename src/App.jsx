@@ -3,7 +3,7 @@ import "aos/dist/aos.css";
 import "./App.css";
 import AOS from "aos";
 import CustomCursor from "./components/cursor/cursor";
-import Navbar from "./components/navbar/navbar";
+import CustomNavbar from "./components/navbar/navbar";
 import Home from "./pages/home/home";
 import About from "./pages/about/about";
 import Project from "./pages/projects/project";
@@ -34,7 +34,7 @@ const App = () => {
           <div className="cursor">
             {/* <CustomCursor /> */}
           </div>
-          <Navbar />
+          <CustomNavbar />
           <div
             id="home"
             className="section pt-32 h-screen flex items-center justify-center"

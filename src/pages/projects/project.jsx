@@ -5,10 +5,10 @@ import Button from '../../components/button/button';
 import { Modal, ModalContent } from "@heroui/modal";
 import "aos/dist/aos.css";
 import projectsData from '../../components/projects.json';
-import att1 from '../../assets/att1.png';
+import att1 from '../../assets/att4.png';
 import att1_2 from '../../assets/att2.png';
 import att1_3 from '../../assets/att3.png';
-import att1_4 from '../../assets/att4.png';
+import att1_4 from '../../assets/att1.png';
 
 import bs from '../../assets/bs1.png';
 import bs_2 from '../../assets/bs2.png';
@@ -113,13 +113,13 @@ const Project = () => {
           })}
         </div>
 
-        <Modal isOpen={open} size='4xl' placement='center' scrollBehavior='inside' onClose={handleClose} className="flex items-center justify-center p-4 sm:p-6">
-          <ModalContent className=" p-6 w-full max-w-3xl sm:max-w-4xl mx-auto rounded-md overflow-auto">
+        <Modal isOpen={open} size='4xl' placement='center' scrollBehavior='inside' onClose={handleClose} className="flex items-center justify-center p-4">
+          <ModalContent className=" p-4 ">
             {selectedProject && (
               <>
-                <h2 className="text-2xl font-bold mb-4 text-center sm:text-left text-indigo-500">{selectedProject.title}</h2>
-                <p className="mb-4 text-sm sm:text-base">{selectedProject.description}</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <h2 className="text-2xl font-bold mb-4 text-center text-indigo-500">{selectedProject.title}</h2>
+                <p className="mb-4 text-sm ">{selectedProject.description}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto">
                   {(images[selectedProject.image] || []).map((img, idx) => (
                     <img
                       key={idx}
@@ -130,7 +130,7 @@ const Project = () => {
                     />
                   ))}
                 </div>
-                <div className="mt-4 flex flex-col sm:flex-row justify-between gap-2 sm:gap-4">
+                <div className="mt-4 flex flex-row  gap-6">
                   {selectedProject.liveLink && (
                     <Button
                     as="a"
