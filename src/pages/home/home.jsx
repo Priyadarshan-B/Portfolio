@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import Button from "../../components/button/button"
+import Button from "../../components/button/button";
 import { SiLeetcode } from "react-icons/si";
-import { Modal } from "@mui/material";
+import { Modal, ModalContent } from "@heroui/modal";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import "./home.css"; 
@@ -23,12 +23,7 @@ const Home = () => {
     renderToolbar: (Toolbar) => (
       <Toolbar>
         {(slots) => {
-          const {
-            CurrentPageInput,
-            NumberOfPages,
-            Zoom,
-          } = slots;
-
+          const { CurrentPageInput, NumberOfPages, Zoom } = slots;
           return (
             <div className="custom-toolbar flex items-center space-x-2">
               {CurrentPageInput && <CurrentPageInput />}
@@ -99,7 +94,7 @@ const Home = () => {
         </p>
         <div data-aos="fade-up">
           <Button
-            className="mt-6 px-6 py-3 "
+            className="mt-6 px-6 py-3"
             onClick={openModal}
           >
             Download CV
@@ -162,24 +157,23 @@ const Home = () => {
       </div>
 
       <Modal
-        open={isModalOpen}
+        isOpen={isModalOpen}
         onClose={closeModal}
         aria-labelledby="pdf-preview"
         aria-describedby="pdf-preview-description"
       >
-        <div className="modal-container">
-          <div className="modal-viewer">
-            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-              <Viewer fileUrl={samplePDF} plugins={[defaultLayoutPluginInstance]} />
-            </Worker>
+        <ModalContent>
+          <div className="modal-container bg-white dark:bg-gray-900 p-4 rounded-lg">
+            <div className="modal-viewer">
+              <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                <Viewer fileUrl={samplePDF} />
+              </Worker>
+            </div>
+            <Button className="mt-4 px-4 py-2" onClick={downloadPDF}>
+              Download
+            </Button>
           </div>
-          <Button
-            className="mt-4 px-4 py-2"
-            onClick={downloadPDF}
-          >
-            Download
-          </Button>
-        </div>
+        </ModalContent>
       </Modal>
     </div>
   );

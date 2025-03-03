@@ -18,14 +18,14 @@ const CustomNavBar = () => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false); // Close the menu when a nav item is clicked
+      setIsMenuOpen(false); 
     }
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isMenuOpen && !event.target.closest(".nextui-navbar-menu")) {
-        setIsMenuOpen(false); // Close the menu when clicking outside
+        setIsMenuOpen(false); 
       }
     };
 
@@ -34,7 +34,7 @@ const CustomNavBar = () => {
   }, [isMenuOpen]);
 
   return (
-    <Navbar isBordered className="fixed top-4 left-1/2 -translate-x-1/2 w-11/12 max-w-6xl z-50 bg-white/90 dark:bg-gray-900 backdrop-blur-md shadow-lg rounded-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-800/20">
+    <Navbar  className="fixed top-4 left-1/2 -translate-x-1/2 w-11/12 max-w-6xl z-50 bg-white/90 dark:bg-gray-900 backdrop-blur-md shadow-lg rounded-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-800/20">
       <NavbarBrand>
         <span className="text-lg font-bold text-gray-800 dark:text-gray-200">Priyan</span>
       </NavbarBrand>
@@ -53,14 +53,10 @@ const CustomNavBar = () => {
       </NavbarContent>
 
       <NavbarMenuToggle
-        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         className="md:hidden"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
       />
 
       <NavbarMenu
-        isOpen={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)}
         className="fixed top-0 left-0 w-1/2 h-full bg-white dark:bg-gray-900 shadow-lg flex flex-col items-center justify-center space-y-6 nextui-navbar-menu"
       >
         {["home", "about", "skill", "project", "contact"].map((section) => (
