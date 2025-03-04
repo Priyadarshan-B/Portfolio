@@ -45,7 +45,7 @@ const Project = () => {
   const [previewImage, setPreviewImage] = useState(null);
 
   const handleOpen = (project) => {
-    console.log("card clicked")
+    // console.log("card clicked")
     setSelectedProject(project);
     setOpen(true);
   };

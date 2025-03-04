@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -6,44 +8,66 @@ import {
   NavbarItem,
   NavbarMenu,
   NavbarMenuItem,
-  NavbarMenuToggle
+  NavbarMenuToggle,
 } from "@heroui/react";
 import ThemeToggle from "../theme/toggle";
 import "./navbar.css";
 
+const sections = ["home", "about", "skill", "project", "contact"];
+
 const CustomNavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false); 
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
   };
+
+  const updateActiveSection = useCallback(() => {
+    const visibleSection = sections.find((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        const { top, bottom } = element.getBoundingClientRect();
+        return top <= window.innerHeight / 2 && bottom >= 100;
+      }
+      return false;
+    });
+    if (visibleSection && visibleSection !== activeSection) {
+      setActiveSection(visibleSection);
+    }
+  }, [activeSection]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateActiveSection);
+    return () => window.removeEventListener("scroll", updateActiveSection);
+  }, [updateActiveSection]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest(".nextui-navbar-menu")) {
-        setIsMenuOpen(false); 
-      }
+      if (isMenuOpen && !event.target.closest("nav")) setIsMenuOpen(false);
     };
-
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
   return (
-    <Navbar  className="fixed top-4 left-1/2 -translate-x-1/2 w-11/12 max-w-6xl z-50 bg-white/90 dark:bg-gray-900 backdrop-blur-md shadow-lg rounded-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-800/20">
+    <Navbar
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      className="fixed top-4 left-1/2 -translate-x-1/2 w-11/12 max-w-6xl z-50 bg-white/90 dark:bg-gray-900 backdrop-blur-md shadow-lg rounded-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-gray-800/20"
+    >
       <NavbarBrand>
         <span className="text-lg font-bold text-gray-800 dark:text-gray-200">Priyan</span>
       </NavbarBrand>
 
       <NavbarContent justify="end" className="hidden md:flex">
-        {["home", "about", "skill", "project", "contact"].map((section) => (
+        {sections.map((section) => (
           <NavbarItem key={section}>
             <button
-              className="px-6 py-2 text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-all duration-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-lg capitalize"
+              className={`px-6 py-2 text-lg capitalize font-medium transition-all duration-300 hover:bg-indigo-100/90 hover:rounded-md dark:hover:bg-indigo-800/20 ${
+                activeSection === section ? "text-indigo-600 dark:text-indigo-400" : "text-gray-800 dark:text-gray-200"
+              }`}
               onClick={() => scrollToSection(section)}
             >
               {section}
@@ -52,17 +76,15 @@ const CustomNavBar = () => {
         ))}
       </NavbarContent>
 
-      <NavbarMenuToggle
-        className="md:hidden"
-      />
+      <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="md:hidden" />
 
-      <NavbarMenu
-        className="fixed top-0 left-0 w-1/2 h-full bg-white dark:bg-gray-900 shadow-lg flex flex-col items-center justify-center space-y-6 nextui-navbar-menu"
-      >
-        {["home", "about", "skill", "project", "contact"].map((section) => (
+      <NavbarMenu className="fixed top-1 left-1 w-1/2 h-12 pt-20 rounded-md">
+        {sections.map((section) => (
           <NavbarMenuItem key={section}>
             <button
-              className="w-full px-6 py-2 text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-all duration-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 text-lg capitalize"
+              className={`w-full px-6 py-2 text-lg capitalize font-medium transition-all duration-300 hover:bg-indigo-100/90 hover:rounded-md dark:hover:bg-indigo-800/20 ${
+                activeSection === section ? "text-indigo-600 dark:text-indigo-400" : "text-gray-800 dark:text-gray-200"
+              }`}
               onClick={() => scrollToSection(section)}
             >
               {section}
