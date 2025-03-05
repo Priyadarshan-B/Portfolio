@@ -13,13 +13,14 @@
   gap: 10px;
 }
 
-@media (max-width : 999px){
+@media (max-width :999px){
   .skills-sidebar{
     flex-direction: column;
   }
   .skills-list{
     flex-direction: column;
   }
+  
 }
 
 .skill-group-button {
@@ -52,8 +53,8 @@
 }
 
 .skill-image {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
@@ -61,28 +62,23 @@
 .skill-image:hover {
   filter: grayscale(0%);
 }
-
+@media (max-width: 999px){
+  .skill-image{
+    filter: grayscale(0%);
+    }
+}
 .skill-info {
   margin-top: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
-.skill-bar {
-  height: 8px;
-  width: 100%;
-  background: #e0e0e0;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 5px;
-}
-
-.skill-progress {
+/* .skill-progress {
   height: 100%;
   background: linear-gradient(to right, #2a304c, #1e2a47);
-  transition: width 1s ease-in-out;
-}
-.skill-name{
-  width: 100%;
-}
+  transition: width 3s ease-in-out;
+} */
+
+
