@@ -22,7 +22,7 @@ const App = () => {
 
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 0); 
+    }, 2000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -32,7 +32,7 @@ const App = () => {
       {isLoaded ? (
         <>
           <div className="cursor">
-            {/* <CustomCursor /> */}
+            <CustomCursor /> 
           </div>
           <CustomNavbar />
           <div
@@ -51,7 +51,7 @@ const App = () => {
 
           <div
             id="skill"
-            className="section pt-16 flex items-center justify-center"
+            className="section pt-16 flex h-screen items-center justify-center"
           >
             <Skill />
           </div>
