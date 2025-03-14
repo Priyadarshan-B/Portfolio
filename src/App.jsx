@@ -19,7 +19,7 @@ const App = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 1500,
       once: false,
     });
 
@@ -55,7 +55,7 @@ const App = () => {
 
           <div
             id="skill"
-            className="section pt-16 flex h-screen items-center justify-center"
+            className="section pt-16 flex  items-center justify-center"
           >
             <Skill />
           </div>
@@ -87,92 +87,72 @@ const App = () => {
         </div>
       )}
       <div className="area bg-[linear-gradient(140deg,#eceff7,#bccada,#c1cdde)] dark:bg-[linear-gradient(140deg,theme('colors.darkBackground'),#282c34,#363b49)]">
-        <ul className="circles">
-          <li>
+        <ul className="circles ">
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
               alt="HTML5"
               className="h-10 w-10"
             />
           </li>
-          <li>
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
               className="w-12 h-12"
               alt="CSS3"
             />
           </li>
-          <li>
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
               className="w-10 h-10"
               alt="JavaScript"
             />
           </li>
-          <li>
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
               className="w-10 h-10"
               alt="React.js"
             />
           </li>
-          <li>
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
               className="w-10 h-10"
               alt="Node.js"
             />
           </li>
-          <li>
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
               className="w-10 h-10"
               alt="Express.js"
             />
           </li>
-          <li>
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
               className="w-10 h-10"
               alt="MongoDB"
             />
           </li>
-          <li>
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
               className="w-12 h-12"
               alt="MySQL"
             />
           </li>
-          <li>
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
               className="w-10 h-10"
               alt="Tailwind CSS"
             />
           </li>
-          <li>
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
-              className="w-10 h-10"
-              alt="Redux"
-            />
-          </li>
-          <li>
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
-              className="w-10 h-10"
-              alt="Golang"
-            />
-          </li>
-          <li>
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg"
-              className="w-10 h-10"
-              alt="MUI"
-            />
-          </li>
-          <li>
+
+          <li className="bg-circlelight dark:bg-circledark">
             <img
               src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
               className="w-10 h-10"

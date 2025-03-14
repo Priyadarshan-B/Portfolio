@@ -145,7 +145,7 @@ const Skills = () => {
                     />
                   </a>
                   <div className="skill-info">
-                    <span className="skill-name w-full mb-1" data-aos="fade-right">{skill.name}</span>
+                    <br />
                     <Tooltip
                       content={`${skill.level}% proficiency`}
                       placement="top"
@@ -170,6 +170,7 @@ const Skills = () => {
                         />
                       )}
                     </Tooltip>
+                    <span className="skill-name w-full mb-1" data-aos="fade-right">{skill.name}</span>
                   </div>
                 </Card>
               ))}

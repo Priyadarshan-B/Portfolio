@@ -19,6 +19,8 @@ export default {
         buttonDark: "#383f5b",
         darkModal: "#1f1f1f",
         darkBox: "#1e2633", 
+        circlelight:"#ddeaee",
+        circledark:"#3f4655",
       },
     },
   },
