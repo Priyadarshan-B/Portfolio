@@ -128,8 +128,8 @@ const Contact = () => {
                   </a>
                 </div>
                 <div className="flex items-center">
-                  <FaEnvelope className="text-gray-600 mr-4 text-base sm:text-xl" />
-                  <a href="mailto:bpriyan18082004@gmail.com" className="hover:text-blue-500 text-sm sm:text-base">
+                  <FaEnvelope className="text-gray-600 mr-4 text-base " />
+                  <a href="mailto:bpriyan18082004@gmail.com" className="hover:text-blue-500 ">
                   bpriyan18082004@gmail.com
                   </a>
                 </div>
