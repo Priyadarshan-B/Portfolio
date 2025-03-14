@@ -5,6 +5,7 @@
   justify-items: center;
   align-items: center;
   padding: 2rem;
+  gap: 40px;
 }
 
 .skills-sidebar {

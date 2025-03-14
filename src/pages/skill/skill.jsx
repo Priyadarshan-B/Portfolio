@@ -30,7 +30,7 @@ const skillGroups = {
       level: 80,
       image: "https://static.cdnlogo.com/logos/t/58/tailwindcss.svg",
       url: "https://tailwindcss.com",
-    }, // Alternate Tailwind PNG
+    }, 
   ],
   Backend: [
     {
@@ -108,74 +108,74 @@ const Skills = () => {
   }, []);
 
   return (
-    <div className="skills-container ">
+    <div>
       <h2 className="text-3xl font-bold text-center mb-6" data-aos="fade-down">Skills</h2>
-
-      <div className="flex flex-wrap justify-center gap-3 mb-8" data-aos="fade-up">
-        {Object.keys(skillGroups).map((group) => (
-          <Chip
-            key={group}
-            variant={activeGroup === group ? "dot" : "flat"}
-            color="primary"
-            size="lg"
-            onClick={() => setActiveGroup(group)}
-            className="cursor-pointer font-semibold"
-          >
-            {group}
-          </Chip>
-        ))}
-      </div>
-
-      <div className="skills-main" >
-        {activeGroup && (
-          <div className="skills-list" >
-            {skillGroups[activeGroup].map((skill) => (
-              <Card
-                isHoverable
-                isPressable
-                key={skill.name}
-                className="skills-card p-5  flex flex-row  min-w-56 gap-3 text-center"
-                data-aos="zoom-in"
-              >
-                <a href={skill.url} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={skill.image}
-                    alt={skill.name}
-                    className="skill-image"
-                    data-aos="fade-left"
-                  />
-                </a>
-                <div className="skill-info">
-                  <span className="skill-name w-full mb-1" data-aos="fade-right">{skill.name}</span>
-                  <Tooltip
-                    content={`${skill.level}% proficiency`}
-                    placement="top"
-                    closeDelay={1000} 
-                  >
-                    {!isMobile ? (
-                      <Progress
-                        aria-label="Loading..."
-                        color="success"
-                        className="pg1 max-w-md"
-                        value={skill.level}
-                        data-aos="zoom-out"
-                      />
-                    ) : (
-                      <Progress
-                        aria-label="Loading..."
-                        color="success"
-                        className="pg2 max-w-md"
-                        showValueLabel={true}
-                        value={skill.level}
-                        data-aos="zoom-out"
-                      />
-                    )}
-                  </Tooltip>
-                </div>
-              </Card>
-            ))}
-          </div>
-        )}
+      <div className="skills-container ">
+        <div className="flex  flex-wrap justify-center gap-3 mb-8" data-aos="fade-up">
+          {Object.keys(skillGroups).map((group) => (
+            <Chip
+              key={group}
+              variant={activeGroup === group ? "dot" : "flat"}
+              color="primary"
+              size="lg"
+              onClick={() => setActiveGroup(group)}
+              className="cursor-pointer font-semibold"
+            >
+              {group}
+            </Chip>
+          ))}
+        </div>
+        <div className="skills-main" >
+          {activeGroup && (
+            <div className="skills-list" >
+              {skillGroups[activeGroup].map((skill) => (
+                <Card
+                  isHoverable
+                  isPressable
+                  key={skill.name}
+                  className="skills-card p-5  flex flex-row  min-w-56 gap-3 text-center"
+                  data-aos="zoom-in"
+                >
+                  <a href={skill.url} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={skill.image}
+                      alt={skill.name}
+                      className="skill-image"
+                      data-aos="fade-left"
+                    />
+                  </a>
+                  <div className="skill-info">
+                    <span className="skill-name w-full mb-1" data-aos="fade-right">{skill.name}</span>
+                    <Tooltip
+                      content={`${skill.level}% proficiency`}
+                      placement="top"
+                      closeDelay={1000}
+                    >
+                      {!isMobile ? (
+                        <Progress
+                          aria-label="Loading..."
+                          color="success"
+                          className="pg1 max-w-md"
+                          value={skill.level}
+                          data-aos="zoom-out"
+                        />
+                      ) : (
+                        <Progress
+                          aria-label="Loading..."
+                          color="success"
+                          className="pg2 max-w-md"
+                          showValueLabel={true}
+                          value={skill.level}
+                          data-aos="zoom-out"
+                        />
+                      )}
+                    </Tooltip>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

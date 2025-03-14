@@ -63,8 +63,8 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center px-4">
-      <div className="w-full max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-down">
+      <div className="w-full ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10" data-aos="fade-down">
           <Card 
           >
             <CardHeader className="p-6 md:p-8">
@@ -113,7 +113,7 @@ const Contact = () => {
             </CardBody>
           </Card>
           
-          <Card isPressable className="overflow-hidden">
+          <Card isHoverable className="overflow-hidden">
             <CardHeader className="p-6 md:p-8">
               <h2 className="text-3xl font-semibold" data-aos="fade-left">
                 Contact Information
