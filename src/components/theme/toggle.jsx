@@ -1,12 +1,11 @@
-// ThemeToggle.js
 import React, { useState, useEffect } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
 const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode') === 'true' || false); // Initialize from localStorage or false
+  const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode') === 'true' || false); 
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode); // Use documentElement for wider browser support
+    document.documentElement.classList.toggle('dark', darkMode); 
     localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 
@@ -17,7 +16,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="theme-toggle" // No need for dynamic class here
+      className="theme-toggle" 
       aria-label="Toggle dark mode"
     >
       <div className="icons-container">
@@ -30,7 +29,6 @@ const ThemeToggle = () => {
 
 export default ThemeToggle;
 
-// CSS Styles
 const styles = `
 .theme-toggle {
   position: relative;
@@ -106,5 +104,4 @@ body.dark {
 }
 `;
 
-// Inject styles
 document.head.insertAdjacentHTML('beforeend', `<style>${styles}</style>`);

@@ -1,6 +1,5 @@
 import { Card, CardBody, CardHeader } from "@heroui/react";
 import gif from "../../assets/about2.svg";
-import "./about.css";
 
 const About = () => {
   return (

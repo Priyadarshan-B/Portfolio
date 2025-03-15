@@ -11,7 +11,6 @@ import {
   NavbarMenuToggle,
 } from "@heroui/react";
 import ThemeToggle from "../theme/toggle";
-import "./navbar.css";
 
 const sections = ["home", "about", "skill", "project", "contact"];
 

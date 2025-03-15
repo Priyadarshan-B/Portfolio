@@ -129,13 +129,11 @@
   overflow: hidden;
 }
 
-/* Viewer area that scrolls if content overflows */
 .modal-viewer {
   flex: 1;
   overflow: auto;
 }
 
-/* Optional: Adjust button spacing for mobile */
 @media (max-width: 480px) {
   .modal-container {
     padding: 0.5rem;

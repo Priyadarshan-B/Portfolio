@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardBody, CardHeader,  } from "@heroui/react";
+import { Card, CardBody, CardHeader,Skeleton  } from "@heroui/react";
 import { Chip } from "@heroui/chip";
 import Button from '../../components/button/button';
 import { Modal, ModalContent } from "@heroui/modal";
@@ -45,7 +45,6 @@ const Project = () => {
   const [previewImage, setPreviewImage] = useState(null);
 
   const handleOpen = (project) => {
-    // console.log("card clicked")
     setSelectedProject(project);
     setOpen(true);
   };

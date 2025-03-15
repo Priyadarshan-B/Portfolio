@@ -9,7 +9,7 @@ import About from "./pages/about/about";
 import Project from "./pages/projects/project";
 import Contact from "./pages/contact/contact";
 import Skill from "./pages/skill/skill";
-import Background from "./components/background/background";
+// import Background from "./components/background/background";
 import "vanta/dist/vanta.topology.min";
 import "vanta/dist/vanta.topology.min";
 import "./components/loader.css";
@@ -88,77 +88,13 @@ const App = () => {
       )}
       <div className="area bg-[linear-gradient(140deg,#eceff7,#bccada,#c1cdde)] dark:bg-[linear-gradient(140deg,theme('colors.darkBackground'),#282c34,#363b49)]">
         <ul className="circles ">
-          <li className="bg-circlelight dark:bg-circledark">
-            {/* <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-              alt="HTML5"
-              className="h-10 w-10"
-            /> */}
-          </li>
-          <li className="bg-circlelight dark:bg-circledark">
-            {/* <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
-              className="w-12 h-12"
-              alt="CSS3"
-            /> */}
-          </li>
-          <li className="bg-circlelight dark:bg-circledark">
-            {/* <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-              className="w-10 h-10"
-              alt="JavaScript"
-            /> */}
-          </li>
-          <li className="bg-circlelight dark:bg-circledark">
-            {/* <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-              className="w-10 h-10"
-              alt="React.js"
-            /> */}
-          </li>
-          <li className="bg-circlelight dark:bg-circledark">
-            {/* <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-              className="w-10 h-10"
-              alt="Node.js"
-            /> */}
-          </li>
-          <li className="bg-circlelight dark:bg-circledark">
-            {/* <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
-              className="w-10 h-10"
-              alt="Express.js"
-            /> */}
-          </li>
-          <li className="bg-circlelight dark:bg-circledark">
-            {/* <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
-              className="w-10 h-10"
-              alt="MongoDB"
-            /> */}
-          </li>
-          {/* <li className="bg-circlelight dark:bg-circledark">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
-              className="w-12 h-12"
-              alt="MySQL"
-            />
-          </li>
-          <li className="bg-circlelight dark:bg-circledark">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
-              className="w-10 h-10"
-              alt="Tailwind CSS"
-            />
-          </li>
-
-          <li className="bg-circlelight dark:bg-circledark">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-              className="w-10 h-10"
-              alt="Git"
-            />
-          </li> */}
+          <li className="bg-circlelight dark:bg-circledark"></li>
+          <li className="bg-circlelight dark:bg-circledark"></li>
+          <li className="bg-circlelight dark:bg-circledark"></li>
+          <li className="bg-circlelight dark:bg-circledark"></li>
+          <li className="bg-circlelight dark:bg-circledark"></li>
+          <li className="bg-circlelight dark:bg-circledark"></li>
+          <li className="bg-circlelight dark:bg-circledark"></li>
         </ul>
       </div>
     </div>
