@@ -90,8 +90,7 @@ const Home = () => {
           <span className="blink text-blue-200 animate-blink">|</span>
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-smallFontDark" data-aos="fade-right">
-          Welcome to my portfolio! I craft innovative, user-friendly websites and applications that bring your ideas to life with precision and creativity.
-        </p>
+        I'm a MERN stack web developer and DevOps enthusiast, crafting scalable, user-friendly applications with precision, innovation, and seamless deployment.        </p>
         <div data-aos="fade-up">
           <Button
             className="mt-6 px-6 py-3"

@@ -19,15 +19,39 @@ const App = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1500,
+      duration: 1200,
       once: false,
     });
 
-    const timer = setTimeout(() => {
+    if (localStorage.getItem("visited")) {
       setIsLoaded(true);
-    }, 2000);
+      return;
+    }
 
-    return () => clearTimeout(timer);
+    const images = document.images;
+    let loadedImages = 0;
+
+    const checkLoad = () => {
+      loadedImages++;
+      if (loadedImages === images.length) {
+        setIsLoaded(true);
+        localStorage.setItem("visited", "true");
+      }
+    };
+
+    for (let i = 0; i < images.length; i++) {
+      if (images[i].complete) {
+        checkLoad();
+      } else {
+        images[i].addEventListener("load", checkLoad);
+      }
+    }
+
+    return () => {
+      for (let i = 0; i < images.length; i++) {
+        images[i].removeEventListener("load", checkLoad);
+      }
+    };
   }, []);
 
   return (

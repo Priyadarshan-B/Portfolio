@@ -1,182 +1,136 @@
-import { useState, useEffect } from "react";
-import { Tooltip, Chip, Card, Progress } from "@heroui/react";
+import next from"../../assets/nextui.png"
 import "./skill.css";
 
-const skillGroups = {
-  Frontend: [
-    {
-      name: "HTML",
-      level: 90,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    },
-    {
-      name: "CSS",
-      level: 95,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-    },
-    {
-      name: "React",
-      level: 80,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      url: "https://react.dev",
-    },
-    {
-      name: "Tailwind",
-      level: 80,
-      image: "https://static.cdnlogo.com/logos/t/58/tailwindcss.svg",
-      url: "https://tailwindcss.com",
-    }, 
-  ],
-  Backend: [
-    {
-      name: "Node.js",
-      level: 85,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      url: "https://nodejs.org",
-    },
-    {
-      name: "Express",
-      level: 85,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      url: "https://expressjs.com",
-    },
-    {
-      name: "Golang",
-      level: 50,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
-      url: "https://golang.org",
-    },
-  ],
-  Database: [
-    {
-      name: "MySQL",
-      level: 90,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      url: "https://www.mysql.com",
-    },
-    {
-      name: "MongoDB",
-      level: 70,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-      url: "https://www.mongodb.com",
-    },
-  ],
-  DevOps: [
-    {
-      name: "Docker",
-      level: 75,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-      url: "https://www.docker.com",
-    },
-    {
-      name: "Git",
-      level: 95,
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-      url: "https://git-scm.com",
-    },
-    {
-      name: "Postman",
-      level: 95,
-      image: "https://static.cdnlogo.com/logos/p/20/postman.svg",
-      url: "https://www.postman.com",
-    }, 
-  ],
-};
+const skills = [
+  {
+    name: "HTML",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    name: "JavaScript",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "TypeScript",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  {
+    name: "React",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Next.js",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    image: "https://static.cdnlogo.com/logos/t/58/tailwindcss.svg",
+  },
+  {
+    name: "Node.js",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "Express.js",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
+  {
+    name: "MongoDB",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
+  {
+    name: "MySQL",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  },
+  {
+    name: "Git",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    name: "GitHub",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  },
+  {
+    name: "Vercel",
+    image:
+      "https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/favicon.ico",
+  },
+  {
+    name: "Postman",
+    image: "https://static.cdnlogo.com/logos/p/20/postman.svg",
+  },
+  {
+    name: "Linux",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+  },
+  { name: "pnpm", image: "https://pnpm.io/img/favicon.png" },
+  {
+    name: "Docker",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  },
+  {
+    name: "Nginx",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
+  },
+  {
+    name: "Netlify",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg",
+  },
+  {
+    name: "Ant Design",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/antdesign/antdesign-original.svg",
+  },
+  {
+    name: "MUI",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+  },
+  {
+    name: "NextUI",
+    image: next,
+  },
+];
 
 const Skills = () => {
-  const [activeGroup, setActiveGroup] = useState(Object.keys(skillGroups)[0]);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 999);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 999);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <div>
-      <h2 className="text-3xl font-bold text-center mb-6" data-aos="fade-down">Skills</h2>
-      <div className="skills-container ">
-        <div className="flex  flex-wrap justify-center gap-3 mb-8" data-aos="fade-up">
-          {Object.keys(skillGroups).map((group) => (
-            <Chip
-              key={group}
-              variant={activeGroup === group ? "dot" : "flat"}
-              color="primary"
-              size="lg"
-              onClick={() => setActiveGroup(group)}
-              className="cursor-pointer font-semibold"
-            >
-              {group}
-            </Chip>
-          ))}
-        </div>
-        <div className="skills-main" >
-          {activeGroup && (
-            <div className="skills-list" >
-              {skillGroups[activeGroup].map((skill) => (
-                <Card
-                  isHoverable
-                  isPressable
-                  key={skill.name}
-                  className="skills-card p-5  flex flex-row  min-w-56 gap-3 text-center"
-                  data-aos="zoom-in"
-                >
-                  <a href={skill.url} target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={skill.image}
-                      alt={skill.name}
-                      className="skill-image"
-                      data-aos="fade-left"
-                    />
-                  </a>
-                  <div className="skill-info">
-                    <br />
-                    <Tooltip
-                      content={`${skill.level}% proficiency`}
-                      placement="top"
-                      closeDelay={1000}
-                    >
-                      {!isMobile ? (
-                        <Progress
-                          aria-label="Loading..."
-                          color="success"
-                          className="pg1 max-w-md"
-                          value={skill.level}
-                          data-aos="zoom-out"
-                        />
-                      ) : (
-                        <Progress
-                          aria-label="Loading..."
-                          color="success"
-                          className="pg2 max-w-md"
-                          showValueLabel={true}
-                          value={skill.level}
-                          data-aos="zoom-out"
-                        />
-                      )}
-                    </Tooltip>
-                    <span className="skill-name w-full mb-1" data-aos="fade-right">{skill.name}</span>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          )}
-        </div>
+    <div className="p-6 max-w-7xl flex flex-col">
+      <center className="mb-1 uppercase" data-aos="fade-up">I constantly try to improve</center>
+      <h2 className="text-3xl font-semibold text-center mb-6" data-aos="fade-down">
+        My Tech Stack
+      </h2>
+
+      <div className="flex flex-row justify-center flex-wrap gap-2 items-center">
+        {skills.map((skill) => (
+          <div
+            key={skill.name}
+            data-aos="zoom-in"
+            className="flex items-center gap-2 bg-white dark:bg-gray-950 text-black dark:text-white px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg"
+          >
+            <img src={skill.image} rel="preconnect" alt={skill.name} className="w-6 h-6" />
+            <span className="text-sm font-medium">{skill.name}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
