@@ -64,7 +64,7 @@ const CustomNavBar = () => {
         {sections.map((section) => (
           <NavbarItem key={section}>
             <button
-              className={`px-6 py-2 text-lg capitalize font-medium transition-all duration-300 hover:bg-indigo-100/90 hover:rounded-md dark:hover:bg-indigo-800/20 ${
+              className={`px-4 py-2 text-lg capitalize font-medium transition-all duration-300 hover:bg-indigo-100/90 hover:rounded-md dark:hover:bg-indigo-800/20 ${
                 activeSection === section ? "text-indigo-600 dark:text-indigo-400" : "text-gray-800 dark:text-gray-200"
               }`}
               onClick={() => scrollToSection(section)}

@@ -30,6 +30,12 @@ import la_1 from '../../assets/la2.png';
 import la_2 from '../../assets/la3.png';
 import la_3 from '../../assets/la4.png';
 
+import e1 from '../../assets/e1.png'
+import e2 from '../../assets/e2.png'
+import e3 from '../../assets/e3.png'
+import e4 from '../../assets/e4.png'
+
+
 
 const images = {
   1: [att1, att1_2, att1_3, att1_4],
@@ -37,6 +43,7 @@ const images = {
   3: [learn_1, learn_2, learn_3, learn_4],
   4: [dot, dot1, dot2, dot3],
   5: [la, la_1, la_2, la_3],
+  6:[e1, e2,e3,e4]
 };
 
 const Project = () => {
@@ -69,7 +76,7 @@ const Project = () => {
           Projects
         </h1>
         <div
-          className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
           data-aos="fade-up"
         >
           {projectsData.map((project) => {
@@ -96,12 +103,12 @@ const Project = () => {
                   <h3 className="text-lg font-semibold text-indigo-500">
                     {project.title}
                   </h3>
-                  <p className="line-clamp-4 mt-2 text-gray-500 dark:text-smallFontDark">
+                  <p className="line-clamp-3 mt-2 text-gray-500 dark:text-smallFontDark">
                     {project.description}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.techStack.map((tech, index) => (
-                      <Chip key={index} variant="flat" color="primary" className="px-2 py-1 text-xs">
+                      <Chip key={index} variant="flat" color="primary" size='sm' className="px-2 py-1 ">
                         {tech}
                       </Chip>
                     ))}

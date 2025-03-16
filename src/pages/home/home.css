@@ -10,13 +10,6 @@
   .animate-blink {
     animation: blink 1s step-start infinite;
   }
-  
-  .txt{
-    color: #a5a6ff;
-  }
-  .blink{
-    color: #7f81fc;
-  }
 
 .wave-container {
   position: relative;

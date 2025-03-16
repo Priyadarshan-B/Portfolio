@@ -62,9 +62,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center px-4">
-      <div className="w-full ">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10" data-aos="fade-down">
+    <div className="w-full flex items-center justify-center px-4 m-1">
+      <div className="w-full">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10" data-aos="fade-down">
           <Card 
           >
             <CardHeader className="p-6 md:p-8">
@@ -116,25 +116,25 @@ const Contact = () => {
           <Card isHoverable className="overflow-hidden">
             <CardHeader className="p-6 md:p-8">
               <h2 className="text-3xl font-semibold" data-aos="fade-left">
-                Contact Information
+                Contact
               </h2>
             </CardHeader>
             <CardBody>
-              <div className="space-y-6 dark:bg-darkBox p-4 rounded-lg" data-aos="zoom-in">
+              <div className="space-y-6 bg-gray-200 dark:bg-black p-4 rounded-lg" data-aos="zoom-in">
                 <div className="flex items-center">
-                  <FaPhone className="text-gray-600 mr-4 text-xl rotate-90" />
+                  <FaPhone className="text-gray-600 dark:text-white mr-4 text-xl rotate-90" />
                   <a href="tel:+919789762908" className="hover:text-blue-500">
                     +91 9789762908
                   </a>
                 </div>
                 <div className="flex items-center">
-                  <FaEnvelope className="text-gray-600 mr-4 text-base " />
+                  <FaEnvelope className="text-gray-600 dark:text-white mr-4 text-base " />
                   <a href="mailto:bpriyan18082004@gmail.com" className="hover:text-blue-500 ">
                   bpriyan18082004@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center">
-                  <FaMapMarkerAlt className="text-gray-600 mr-4 text-xl" />
+                  <FaMapMarkerAlt className="text-gray-600 dark:text-white mr-4 text-xl" />
                   <span>43, AVP Layout, Thirumurugan Poondi, Tirupur</span>
                 </div>
               </div>

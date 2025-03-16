@@ -9,7 +9,7 @@ const About = () => {
         <img src={gif} alt="About" height="200px" width="500px" className="rounded-full" data-aos="fade-up" />
       </div>
 
-      <div className="flex flex-1 flex-col gap-6 text-gray-700">
+      <div className="flex flex-1 flex-col gap-10 text-gray-700 max-w-4xl">
         <Card isPressable data-aos="fade-right">
           <CardHeader>
             <p className="text-green-600 font-bold">Who I Am</p>
