@@ -23,35 +23,11 @@ const App = () => {
       once: false,
     });
 
-    if (localStorage.getItem("visited")) {
+    const timer = setTimeout(() => {
       setIsLoaded(true);
-      return;
-    }
+    }, 0);
 
-    const images = document.images;
-    let loadedImages = 0;
-
-    const checkLoad = () => {
-      loadedImages++;
-      if (loadedImages === images.length) {
-        setIsLoaded(true);
-        localStorage.setItem("visited", "true");
-      }
-    };
-
-    for (let i = 0; i < images.length; i++) {
-      if (images[i].complete) {
-        checkLoad();
-      } else {
-        images[i].addEventListener("load", checkLoad);
-      }
-    }
-
-    return () => {
-      for (let i = 0; i < images.length; i++) {
-        images[i].removeEventListener("load", checkLoad);
-      }
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   return (
