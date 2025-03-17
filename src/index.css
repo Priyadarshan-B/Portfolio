@@ -1,10 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: "Montserrat", serif;
+  font-family: "Quicksand", serif;
       line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -15,14 +14,14 @@
 }
 
 *{
-  font-family: "Montserrat", serif;
+  font-family: "Quicksand", serif;
       box-sizing: border-box;
 
 }
 
 
 body {
-  font-family: "Montserrat", serif;
+  font-family: "Quicksand", serif;
   margin: 0;
 }
 

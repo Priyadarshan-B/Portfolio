@@ -17,7 +17,7 @@ import "./components/loader.css";
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const location = useLocation(); // Get the current route
+  const location = useLocation(); 
 
   useEffect(() => {
     AOS.init({
@@ -27,7 +27,7 @@ const App = () => {
 
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 0);
+    },1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -40,7 +40,6 @@ const App = () => {
             <CustomCursor />
           </div>
 
-          {/* Hide Navbar on ProjectsPage */}
           {location.pathname !== "/project" && <CustomNavbar />}
 
           <Routes>
@@ -83,10 +82,10 @@ const App = () => {
   );
 };
 
-const AppWrapper = () => (
+const AppWrap = () => (
   <Router>
     <App />
   </Router>
 );
 
-export default AppWrapper;
+export default AppWrap;
