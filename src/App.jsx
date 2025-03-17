@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import "aos/dist/aos.css";
 import "./App.css";
 import AOS from "aos";
@@ -9,13 +10,14 @@ import About from "./pages/about/about";
 import Project from "./pages/projects/project";
 import Contact from "./pages/contact/contact";
 import Skill from "./pages/skill/skill";
-// import Background from "./components/background/background";
-import "vanta/dist/vanta.topology.min";
+import Background from "./components/background/background";
+import ProjectsPage from "./pages/projects/projectsPage";
 import "vanta/dist/vanta.topology.min";
 import "./components/loader.css";
 
 const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const location = useLocation(); // Get the current route
 
   useEffect(() => {
     AOS.init({
@@ -32,73 +34,59 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {/* <Background /> */}
       {isLoaded ? (
         <>
           <div className="cursor">
             <CustomCursor />
           </div>
-          <CustomNavbar />
-          <div
-            id="home"
-            className="section pt-32 h-screen flex items-center justify-center"
-          >
-            <Home />
-          </div>
 
-          <div
-            id="about"
-            className="section pt-24  flex items-center justify-center"
-          >
-            <About />
-          </div>
+          {/* Hide Navbar on ProjectsPage */}
+          {location.pathname !== "/project" && <CustomNavbar />}
 
-          <div
-            id="skill"
-            className="section pt-16 flex  items-center justify-center"
-          >
-            <Skill />
-          </div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <div id="home" className="section pt-32 h-screen flex items-center justify-center">
+                    <Home />
+                  </div>
 
-          <div
-            id="project"
-            className="section pt-16  flex items-center justify-center"
-          >
-            <Project />
-          </div>
+                  <div id="about" className="section pt-24 flex items-center justify-center">
+                    <About />
+                  </div>
 
-          <div
-            id="contact"
-            className="section pt-16 pb-1 flex items-center justify-center"
-          >
-            <Contact />
-          </div>
+                  <div id="skill" className="section pt-16 flex items-center justify-center">
+                    <Skill />
+                  </div>
+
+                  <div id="project" className="section pt-16 flex items-center justify-center">
+                    <Project />
+                  </div>
+
+                  <div id="contact" className="section pt-16 pb-1 flex items-center justify-center">
+                    <Contact />
+                  </div>
+                </>
+              }
+            />
+            <Route path="/project" element={<ProjectsPage />} />
+          </Routes>
         </>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
-          }}
-        >
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
           <div className="loader"></div>
         </div>
       )}
-      <div className="area bg-[linear-gradient(140deg,#eceff7,#bccada,#c1cdde)] dark:bg-[linear-gradient(140deg,theme('colors.darkBackground'),#282c34,#363b49)]">
-        <ul className="circles ">
-          <li className="bg-circlelight dark:bg-circledark"></li>
-          <li className="bg-circlelight dark:bg-circledark"></li>
-          <li className="bg-circlelight dark:bg-circledark"></li>
-          <li className="bg-circlelight dark:bg-circledark"></li>
-          <li className="bg-circlelight dark:bg-circledark"></li>
-          <li className="bg-circlelight dark:bg-circledark"></li>
-          <li className="bg-circlelight dark:bg-circledark"></li>
-        </ul>
-      </div>
+      <Background />
     </div>
   );
 };
 
-export default App;
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;

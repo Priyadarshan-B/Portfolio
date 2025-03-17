@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Card, CardBody, CardHeader } from "@heroui/react";
-import { Chip } from "@heroui/chip";
-import Button from "../../components/button/button";
+import React, {useState} from "react";
+import { Masonry } from "@mui/lab";
 import { useNavigate } from "react-router-dom";
+import { Card, CardHeader, CardBody, Chip } from "@heroui/react"; 
 import { Modal, ModalContent } from "@heroui/modal";
-import projectsData from "../../components/projects.json";
+import projects from "../../components/projects.json";
+import Button from "../../components/button/button";
 import att1 from "../../assets/att4.png";
 import att1_2 from "../../assets/att2.png";
 import att1_3 from "../../assets/att3.png";
@@ -35,6 +35,17 @@ import e2 from "../../assets/e2.png";
 import e3 from "../../assets/e3.png";
 import e4 from "../../assets/e4.png";
 
+import b1 from '../../assets/b1.png'
+import b2 from '../../assets/b2.png'
+import b3 from '../../assets/b3.png'
+import b4 from '../../assets/b4.png'
+
+import p1 from '../../assets/p1.png'
+import p2 from '../../assets/p2.png'
+import p3 from '../../assets/p3.png'
+import p4 from '../../assets/p4.png'
+
+
 const images = {
   1: [att1, att1_2, att1_3, att1_4],
   2: [bs, bs_2, bs_3, bs_4],
@@ -42,92 +53,83 @@ const images = {
   4: [dot, dot1, dot2, dot3],
   5: [la, la_1, la_2, la_3],
   6: [e1, e2, e3, e4],
+  7:[b1,b2, b3, b4],
+  8:[p1, p2, p3, p4]
 };
 
-const Project = () => {
-  const [open, setOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [previewImage, setPreviewImage] = useState(null);
-  const navigate = useNavigate();
+const ProjectsPage = () => {
+     const [open, setOpen] = useState(false);
+      const [selectedProject, setSelectedProject] = useState(null);
+      const [previewImage, setPreviewImage] = useState(null);
+      const navigate = useNavigate()
 
-  const handleOpen = (project) => {
-    setSelectedProject(project);
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    setSelectedProject(null);
-    setPreviewImage(null);
-  };
-
-  const handleImageClick = (image) => {
-    setPreviewImage(image);
-  };
+      const handleOpen = (project) => {
+        setSelectedProject(project);
+        setOpen(true);
+      };
+    
+      const handleClose = () => {
+        setOpen(false);
+        setSelectedProject(null);
+        setPreviewImage(null);
+      };
+    
+      const handleImageClick = (image) => {
+        setPreviewImage(image);
+      };
 
   return (
-    <div className="min-h-screen w-full py-4 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-8xl mx-auto">
-        <h1
-          className="text-3xl font-bold text-gray-900 dark:text-fontDark mb-8 text-center"
-          data-aos="fade-right"
-        >
-          Projects
-        </h1>
-        <div
-          className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-          data-aos="fade-up"
-        >
-          {projectsData.slice(0,6).map((project) => {
-            const projectImages = images[project.image];
-            const thumbnail = projectImages ? projectImages[0] : "";
-
-            return (
-              <Card
-                key={project.id}
-                className=" cursor-pointer"
-                onPress={() => handleOpen(project)}
-                isPressable
-                shadow="sm"
-                data-aos="flip-right"
-              >
-                <CardHeader className="p-0">
-                  <img
-                    src={thumbnail}
-                    alt={project.title}
-                    className="h-48 w-full object-cover rounded-t-md"
-                  />
-                </CardHeader>
-                <CardBody className="p-6">
-                  <h3 className="text-lg font-semibold text-indigo-500">
-                    {project.title}
-                  </h3>
-                  <p className="line-clamp-3 mt-2 text-gray-500 dark:text-smallFontDark">
-                    {project.description}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.techStack.map((tech, index) => (
-                      <Chip
-                        key={index}
-                        variant="flat"
-                        color="primary"
-                        size="sm"
-                        className="px-2 py-1 "
-                      >
-                        {tech}
-                      </Chip>
-                    ))}
-                  </div>
-                </CardBody>
-              </Card>
-            );
-          })}
-          <div className="col-span-full flex justify-center mt-6" data-aos="zoom-in">
-          <Button color="success" onClick={() => navigate("/project")}>View All →</Button>
-        </div>
-        </div>
-        
-
+    <div className="md:m-10 sm:m-4 ">
+      <h2 className="font-semibold text-3xl text-center p-10">Projects</h2>
+        <Masonry columns={{ xs: 1, sm: 2, md: 4 }} spacing={3} >
+          {projects.map((project) => (
+            <Card
+              key={project.id}
+              className="cursor-pointer"
+              onPress={() => handleOpen(project)}
+              isPressable
+              shadow="sm"
+              
+            >
+              <CardHeader className="p-0">
+                <img
+                  src={images[project.image][0]}
+                  alt={project.title}
+                  className="h-38 w-full object-cover rounded-t-md"
+                />
+              </CardHeader>
+              <CardBody className="p-6">
+                <h3 className="text-lg font-semibold text-indigo-500">
+                  {project.title}
+                </h3>
+                <p className=" mt-2 line-clamp-5 text-gray-500 dark:text-smallFontDark">
+                  {project.description}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.techStack.map((tech, index) => (
+                    <Chip
+                      key={index}
+                      variant="flat"
+                      color="primary"
+                      size="sm"
+                      className="px-2 py-1"
+                    >
+                      {tech}
+                    </Chip>
+                  ))}
+                </div>
+                
+              </CardBody>
+            </Card>
+          ))}
+        </Masonry>
+        <Button
+        variant="solid"
+        onClick={() => navigate(-1)}
+        className="fixed z-10 bottom-6 right-6 px-4 py-2 rounded-full shadow-md md:bottom-8 md:right-8"
+      >
+        ← Go Back
+      </Button>
         <Modal
           isOpen={open}
           size="4xl"
@@ -205,8 +207,7 @@ const Project = () => {
           </Modal>
         )}
       </div>
-    </div>
   );
 };
 
-export default Project;
+export default ProjectsPage;

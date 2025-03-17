@@ -13,7 +13,7 @@
         "title": "Inventory Management",
         "description": "A platform for managing inventory in a retail environment, built using ReactJS, Node.js, and MySQL. It includes features for tracking stock levels, adding products, and managing orders.",
         "image": "2",
-        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS"],
+        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS", "MUI"],
         "liveLink" :"https://app.bestshopsathy.in",
         "githubLink":"https://github.com/Priyadarshan-B/bestshop_update"
     },
@@ -22,7 +22,7 @@
         "title": "E-Learning Platform",
         "description": "An online platform for e-learning with course management, quizzes, and student tracking features. It allows students to enroll in courses and complete quizzes, with performance tracking.",
         "image": "3",
-        "techStack": ["ReactJS", "Node JS (ORM)", "MySQL", "Express", "Tailwind CSS"],
+        "techStack": ["ReactJS", "Node JS (ORM)", "MySQL", "Express", "Tailwind CSS","MUI"],
         "githubLink":"https://github.com/Priyadarshan-B/TechLehren"
     },
     {
@@ -50,5 +50,23 @@
         "techStack":["ReactJS","Tailwind CSS"],
         "liveLink" :"https://www.edfntechnologies.com",
         "githubLink":"https://github.com/Priyadarshan-B/EDFN"
+    },
+    {
+        "id":7,
+        "title":"Bill Track",
+        "description":"BillTract is a streamlined billing management platform built with React, Node.js, and NextUI. It simplifies the process of creating, approving, and rejecting bills while ensuring secure authentication through OAuth integration. With an intuitive UI and seamless workflow, BillTract enhances efficiency in handling financial transactions and approvals.",
+        "image":"7",
+        "techStack":["ReactJS","Node JS","Express","Tailwind CSS", "NextUI"],
+        "githubLink":"https://github.com/Priyadarshan-B/Mark_Entry"
+    },
+    {
+        "id":8,
+        "title":"Personal Website",
+        "description":"My Portfolio is a dynamic and visually engaging personal website showcasing my expertise as a web developer. Built with React and Tailwind CSS, it features light and dark mode, a sleek UI, and smooth animations. The portfolio highlights my projects, skills, and experience, offering an interactive and modern browsing experience. ",
+        "image":"8",
+        "techStack":["ReactJS","Tailwind CSS"],
+        "liveLink" :"https://priyan.vercel.app",
+        "githubLink":"https://github.com/Priyadarshan-B/Portfolio"
     }
+   
 ]
