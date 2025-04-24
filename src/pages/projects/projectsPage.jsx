@@ -81,7 +81,7 @@ const ProjectsPage = () => {
   return (
     <div className="md:m-10 sm:m-4 ">
       <h2 className="font-semibold text-3xl text-center p-10">Projects</h2>
-        <Masonry columns={{ xs: 1, sm: 2, md: 4 }} spacing={3} >
+        <Masonry columns={{ xs: 1, sm: 2, md: 4 }} spacing={3} className="pl-5">
           {projects.map((project) => (
             <Card
               key={project.id}
@@ -105,6 +105,9 @@ const ProjectsPage = () => {
                 <p className=" mt-2 line-clamp-5 text-gray-500 dark:text-smallFontDark">
                   {project.description}
                 </p>
+                <p className="mt-2 text-gray-500 dark:text-smallFontDark">
+                  <b>Role:</b> {project.role}
+                  </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.techStack.map((tech, index) => (
                     <Chip
