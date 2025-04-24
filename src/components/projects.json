@@ -3,6 +3,7 @@
         "id": 1,
         "title": "Attendance Portal",
         "description": "A web application for tracking student attendance using ReactJS, Node.js, and MySQL. It allows faculty to mark attendance and students to view their attendance records.",
+        "role":"Frontend + Backend",
         "image": "1",
         "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "MUI"],
         "liveLink" :"https://learnathon.bitsathy.ac.in/attendance",
@@ -13,6 +14,7 @@
         "title": "Inventory Management",
         "description": "A platform for managing inventory in a retail environment, built using ReactJS, Node.js, and MySQL. It includes features for tracking stock levels, adding products, and managing orders.",
         "image": "2",
+        "role":"Frontend + Backend",
         "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS", "MUI"],
         "liveLink" :"https://app.bestshopsathy.in",
         "githubLink":"https://github.com/Priyadarshan-B/bestshop_update"
@@ -22,6 +24,7 @@
         "title": "E-Learning Platform",
         "description": "An online platform for e-learning with course management, quizzes, and student tracking features. It allows students to enroll in courses and complete quizzes, with performance tracking.",
         "image": "3",
+        "role":"Backend",
         "techStack": ["ReactJS", "Node JS (ORM)", "MySQL", "Express", "Tailwind CSS","MUI"],
         "githubLink":"https://github.com/Priyadarshan-B/TechLehren"
     },
@@ -30,6 +33,7 @@
         "title": "Travel Dot",
         "description": "A travel booking platform that allows users to search for destinations, book flights, and hotels. Built with ReactJS and Node.js for an intuitive user experience and smooth interaction.",
         "image": "4",
+        "role":"Backend",
         "techStack": ["ReactJS", "Node JS", "MongoDB", "Express", "SASS"],
         "githubLink":"https://github.com/Priyadarshan-B/Travel_Dot"
     },
@@ -38,6 +42,7 @@
         "title":"Legal Aid Clinic (SOEL)",
         "description":"A Legal Aid Clinic portal for SOEL, built with React and Tailwind CSS, offering a modern, user-friendly platform for managing cases and facilitating collaboration between students, faculty, and clients.",
         "image":"5",
+        "role":"Frontend",
         "techStack":["ReactJS","Tailwind CSS"],
         "liveLink" :"https://lacsoel.netlify.app/",
         "githubLink":"https://github.com/Priyadarshan-B/leagalAid"
@@ -47,6 +52,7 @@
         "title":"EDFN Technologies",
         "description":"EDFN Technologies is a PCB manufacturing company, and its landing page is built using React with a focus on SEO optimization. The page highlights the company's expertise in PCB design, development, and manufacturing while ensuring a professional and user-friendly experience.",
         "image":"6",
+        "role":"Frontend",
         "techStack":["ReactJS","Tailwind CSS"],
         "liveLink" :"https://www.edfntechnologies.com",
         "githubLink":"https://github.com/Priyadarshan-B/EDFN"
@@ -56,6 +62,7 @@
         "title":"Bill Track",
         "description":"BillTract is a streamlined billing management platform built with React, Node.js, and NextUI. It simplifies the process of creating, approving, and rejecting bills while ensuring secure authentication through OAuth integration. With an intuitive UI and seamless workflow, BillTract enhances efficiency in handling financial transactions and approvals.",
         "image":"7",
+        "role":"Frontend + Backend",
         "techStack":["ReactJS","Node JS","Express","Tailwind CSS", "NextUI"],
         "githubLink":"https://github.com/Priyadarshan-B/Mark_Entry"
     },
@@ -64,6 +71,7 @@
         "title":"Personal Website",
         "description":"My Portfolio is a dynamic and visually engaging personal website showcasing my expertise as a web developer. Built with React and Tailwind CSS, it features light and dark mode, a sleek UI, and smooth animations. The portfolio highlights my projects, skills, and experience, offering an interactive and modern browsing experience. ",
         "image":"8",
+        "role":"Frontend",
         "techStack":["ReactJS","Tailwind CSS"],
         "liveLink" :"https://priyan.vercel.app",
         "githubLink":"https://github.com/Priyadarshan-B/Portfolio"

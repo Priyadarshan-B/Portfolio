@@ -1,4 +1,4 @@
-import next from"../../assets/nextui.png"
+import next from "../../assets/nextui.png";
 import "./skill.css";
 
 const skills = [
@@ -115,8 +115,13 @@ const skills = [
 const Skills = () => {
   return (
     <div className="p-6 max-w-7xl flex flex-col">
-      <center className="mb-1 uppercase" data-aos="fade-up">I constantly try to improve</center>
-      <h2 className="text-3xl font-semibold text-center mb-6" data-aos="fade-down">
+      <center className="mb-1 uppercase" data-aos="fade-up">
+        I constantly try to improve
+      </center>
+      <h2
+        className="text-3xl font-semibold text-center mb-6"
+        data-aos="fade-down"
+      >
         My Tech Stack
       </h2>
 
@@ -127,7 +132,12 @@ const Skills = () => {
             data-aos="zoom-in"
             className="flex items-center gap-2 bg-white dark:bg-gray-950 text-black dark:text-white px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg"
           >
-            <img src={skill.image} rel="preconnect" alt={skill.name} className="w-6 h-6" />
+            <img
+              src={skill.image}
+              rel="preconnect"
+              alt={skill.name}
+              className="w-6 h-6"
+            />
             <span className="text-sm font-medium">{skill.name}</span>
           </div>
         ))}

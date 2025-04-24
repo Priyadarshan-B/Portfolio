@@ -104,6 +104,10 @@ const Project = () => {
                   </h3>
                   <p className="line-clamp-3 mt-2 text-gray-500 dark:text-smallFontDark">
                     {project.description}
+                   
+                  </p>
+                  <p className="mt-2 text-gray-500 dark:text-smallFontDark">
+                  <b>Role:</b> {project.role}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.techStack.map((tech, index) => (
