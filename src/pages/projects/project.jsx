@@ -5,54 +5,30 @@ import Button from "../../components/button/button";
 import { useNavigate } from "react-router-dom";
 import { Modal, ModalContent } from "@heroui/modal";
 import projectsData from "../../components/projects.json";
-import att1 from "../../assets/att4.png";
-import att1_2 from "../../assets/att2.png";
-import att1_3 from "../../assets/att3.png";
-import att1_4 from "../../assets/att1.png";
+import { projectImageArrays } from "../../config/assetUrls";
+import ImageSkeleton from "../../components/skeleton/ImageSkeleton";
+import "./project.css";
+import Masonry from "react-masonry-css";
 
-import bs from "../../assets/bs1.png";
-import bs_2 from "../../assets/bs2.png";
-import bs_3 from "../../assets/bs3.png";
-import bs_4 from "../../assets/bs4.png";
-
-import learn_1 from "../../assets/l1.png";
-import learn_2 from "../../assets/l2.png";
-import learn_3 from "../../assets/l3.png";
-import learn_4 from "../../assets/l4.png";
-
-import dot from "../../assets/dot.png";
-import dot1 from "../../assets/dot2.png";
-import dot2 from "../../assets/dot3.png";
-import dot3 from "../../assets/dot4.png";
-
-import la from "../../assets/la.png";
-import la_1 from "../../assets/la2.png";
-import la_2 from "../../assets/la3.png";
-import la_3 from "../../assets/la4.png";
-
-import e1 from "../../assets/e1.png";
-import e2 from "../../assets/e2.png";
-import e3 from "../../assets/e3.png";
-import e4 from "../../assets/e4.png";
-
-const images = {
-  1: [att1, att1_2, att1_3, att1_4],
-  2: [bs, bs_2, bs_3, bs_4],
-  3: [learn_1, learn_2, learn_3, learn_4],
-  4: [dot, dot1, dot2, dot3],
-  5: [la, la_1, la_2, la_3],
-  6: [e1, e2, e3, e4],
-};
+const images = projectImageArrays;
 
 const Project = () => {
   const [open, setOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+  const [imageLoading, setImageLoading] = useState({});
+  const [modalImageLoading, setModalImageLoading] = useState({});
   const navigate = useNavigate();
 
   const handleOpen = (project) => {
     setSelectedProject(project);
     setOpen(true);
+    const modalImages = images[project.image] || [];
+    const initialModalLoading = {};
+    modalImages.forEach((_, idx) => {
+      initialModalLoading[`${project.id}-${idx}`] = true;
+    });
+    setModalImageLoading(initialModalLoading);
   };
 
   const handleClose = () => {
@@ -65,72 +41,147 @@ const Project = () => {
     setPreviewImage(image);
   };
 
+  const handleImageLoad = (projectId) => {
+    setImageLoading((prev) => ({ ...prev, [projectId]: false }));
+  };
+
+  const handleImageError = (projectId) => {
+    setImageLoading((prev) => ({ ...prev, [projectId]: false }));
+  };
+
+  // Initialize loading state for all projects
+  React.useEffect(() => {
+    const initialLoadingState = {};
+    projectsData.forEach((project) => {
+      initialLoadingState[project.id] = true;
+    });
+    setImageLoading(initialLoadingState);
+  }, []);
+
   return (
-    <div className="min-h-screen w-full py-4 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-8xl mx-auto">
-        <h1
-          className="text-3xl font-bold text-gray-900 dark:text-fontDark mb-8 text-center"
-          data-aos="fade-right"
+    <div className="min-h-screen w-full py-8 px-4 sm:px-6 lg:px-8  from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12" data-aos="fade-down">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-fontDark mb-4">
+            All Projects
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Explore my latest work and creative solutions across various
+            technologies
+          </p>
+        </div>
+        {/* Masonry Grid */}
+        <Masonry
+          breakpointCols={{
+            default: 4,
+            1280: 4,
+            1024: 3,
+            768: 2,
+            0: 1,
+          }}
+          className="masonry-grid"
+          columnClassName="masonry-grid_column"
         >
-          Projects
-        </h1>
-        <div
-          className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-          data-aos="fade-up"
-        >
-          {projectsData.slice(0,6).map((project) => {
+          {projectsData.map((project) => {
             const projectImages = images[project.image];
             const thumbnail = projectImages ? projectImages[0] : "";
+            const isLoading = imageLoading[project.id] !== false;
 
             return (
-              <Card
+              <div
                 key={project.id}
-                className=" cursor-pointer"
-                onPress={() => handleOpen(project)}
-                isPressable
-                shadow="sm"
-                data-aos="flip-right"
+                className="masonry-item relative group hover-lift overflow-hidden rounded-xl cursor-pointer shadow-lg"
+                onClick={() => handleOpen(project)}
+                data-aos="fade-up"
+                data-aos-delay={project.id * 100}
               >
-                <CardHeader className="p-0">
+                {/* Image Container */}
+                <div className="relative overflow-hidden">
+                  {isLoading && (
+                    <div
+                      className={`${
+                        project.id % 3 === 0
+                          ? "h-80"
+                          : project.id % 3 === 1
+                          ? "h-64"
+                          : "h-96"
+                      } w-full animate-pulse bg-gray-200 dark:bg-gray-700 rounded-xl`}
+                    >
+                      <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 rounded-xl"></div>
+                    </div>
+                  )}
                   <img
                     src={thumbnail}
                     alt={project.title}
-                    className="h-48 w-full object-cover rounded-t-md"
+                    className={`image-zoom ${
+                      project.id % 3 === 0
+                        ? "h-80"
+                        : project.id % 3 === 1
+                        ? "h-64"
+                        : "h-96"
+                    } w-full object-cover ${isLoading ? "hidden" : ""}`}
+                    onLoad={() => handleImageLoad(project.id)}
+                    onError={() => handleImageError(project.id)}
                   />
-                </CardHeader>
-                <CardBody className="p-6">
-                  <h3 className="text-lg font-semibold text-indigo-500">
-                    {project.title}
-                  </h3>
-                  <p className="line-clamp-3 mt-2 text-gray-500 dark:text-smallFontDark">
-                    {project.description}
-                   
-                  </p>
-                  <p className="mt-2 text-gray-500 dark:text-smallFontDark">
-                  <b>Role:</b> {project.role}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.techStack.map((tech, index) => (
-                      <Chip
-                        key={index}
-                        variant="flat"
-                        color="primary"
-                        size="sm"
-                        className="px-2 py-1 "
-                      >
-                        {tech}
-                      </Chip>
-                    ))}
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  {/* Project Info Overlay */}
+                  <div
+                    className="absolute inset-0 flex flex-col justify-end p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-out"
+                    style={{
+                      transform: "translateY(100%)",
+                      transition: "transform 0.5s ease-out",
+                    }}
+                  >
+                    <h3
+                      className="text-xl font-bold mb-2 text-white"
+                      style={{
+                        opacity: 0,
+                        transition: "opacity 0.3s ease 0.1s",
+                      }}
+                    >
+                      {project.title}
+                    </h3>
+                    {/* Removed description from hover overlay */}
+                    <div
+                      className="flex items-center justify-between"
+                      style={{
+                        opacity: 0,
+                        transition: "opacity 0.3s ease 0.3s",
+                      }}
+                    >
+                      {/* <span className="text-xs font-medium bg-indigo-600/80 px-2 py-1 rounded-full">
+                        {project.role}
+                      </span> */}
+                      <div className="flex gap-1">
+                        {project.techStack.slice(0, 3).map((tech, index) => (
+                          <span
+                            key={index}
+                            className="text-xs bg-white/20 px-2 py-1 rounded-full backdrop-blur-sm"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.techStack.length > 3 && (
+                          <span className="text-xs bg-white/20 px-2 py-1 rounded-full backdrop-blur-sm">
+                            +{project.techStack.length - 3}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </CardBody>
-              </Card>
+
+                  {/* Click Indicator */}
+                  <div className="absolute top-4 right-4 glass-effect text-white px-3 py-1 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 pulse-animation">
+                    Click to view
+                  </div>
+                </div>
+              </div>
             );
           })}
-          <div className="col-span-full flex justify-center mt-6" data-aos="zoom-in">
-          <Button color="success" onClick={() => navigate("/project")}>View All →</Button>
-        </div>
-        </div>
-        
+        </Masonry>
 
         <Modal
           isOpen={open}
@@ -147,16 +198,55 @@ const Project = () => {
                   {selectedProject.title}
                 </h2>
                 <p className="mb-4 text-sm ">{selectedProject.description}</p>
+                {/* Add role and tech stack in modal */}
+                <div className="flex flex-wrap items-center gap-3 mb-4 justify-center">
+                  <span className="text-xs font-medium bg-indigo-600/80 px-2 py-1 rounded-full text-white">
+                    {selectedProject.role}
+                  </span>
+                  <div className="flex gap-1 flex-wrap">
+                    {selectedProject.techStack.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-gray-200 dark:bg-white/20 px-2 py-1 rounded-full backdrop-blur-sm text-gray-800 dark:text-white"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto">
-                  {(images[selectedProject.image] || []).map((img, idx) => (
-                    <img
-                      key={idx}
-                      src={img}
-                      alt={`${selectedProject.title} screenshot ${idx + 1}`}
-                      className="w-full h-40 sm:h-48 object-cover rounded-md cursor-pointer"
-                      onClick={() => handleImageClick(img)}
-                    />
-                  ))}
+                  {(images[selectedProject.image] || []).map((img, idx) => {
+                    const imageKey = `${selectedProject.id}-${idx}`;
+                    const isLoading = modalImageLoading[imageKey];
+
+                    return (
+                      <div key={idx} className="relative">
+                        {isLoading && (
+                          <ImageSkeleton className="w-full h-40 sm:h-48" />
+                        )}
+                        <img
+                          src={img}
+                          alt={`${selectedProject.title} screenshot ${idx + 1}`}
+                          className={`w-full h-40 sm:h-48 object-cover rounded-md cursor-pointer ${
+                            isLoading ? "hidden" : ""
+                          }`}
+                          onClick={() => handleImageClick(img)}
+                          onLoad={() => {
+                            setModalImageLoading((prev) => ({
+                              ...prev,
+                              [imageKey]: false,
+                            }));
+                          }}
+                          onError={() => {
+                            setModalImageLoading((prev) => ({
+                              ...prev,
+                              [imageKey]: false,
+                            }));
+                          }}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
                 <div className="mt-4 flex flex-row  gap-6">
                   {selectedProject.liveLink && (

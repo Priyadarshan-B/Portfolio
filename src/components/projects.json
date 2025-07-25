@@ -1,6 +1,27 @@
 [
     {
         "id": 1,
+        "title": "Billing Software",
+        "description": "SmartBill Desktop is a full-featured billing and inventory management application built with Electron, React, Node.js, and MongoDB. It offers robust features like bill generation, QR code sticker printing, real-time dashboards, and product management. Designed for desktop environments, it provides a seamless offline-first experience with a clean and responsive UI.",
+        "image": "9",
+        "role": "Fullstack Developer",
+        "techStack": ["ReactJS", "Node.js", "Electron.js", "MongoDB", "Tailwind CSS"],
+        "githubLink": "https://github.com/Priyadarshan-B/HunnyBunny"
+    },
+    {
+        "id": 10,
+        "title": "Blog Web App",
+        "description": "A modern blog platform built using Blazor and MudBlazor that supports user authentication, post creation, and interactive reading. It features a responsive UI, chatbot integration, and clean component-based architecture. The app showcases dynamic content loading, real-time interaction, and a polished reader experience.",
+        "image": "10",
+        "role": "Full Stack",
+        "techStack": ["Blazor", "MudBlazor", ".NET 8", "C#", "Entity Framework", "REST API"],
+        "githubLink": "https://github.com/Priyadarshan-B/Blog_Frontend"
+      },
+      
+      
+    
+    {
+        "id": 2,
         "title": "Attendance Portal",
         "description": "A web application for tracking student attendance using ReactJS, Node.js, and MySQL. It allows faculty to mark attendance and students to view their attendance records.",
         "role":"Frontend + Backend",
@@ -10,7 +31,7 @@
         "githubLink":"https://github.com/Priyadarshan-B/Attendance"
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "Inventory Management",
         "description": "A platform for managing inventory in a retail environment, built using ReactJS, Node.js, and MySQL. It includes features for tracking stock levels, adding products, and managing orders.",
         "image": "2",
@@ -20,16 +41,17 @@
         "githubLink":"https://github.com/Priyadarshan-B/bestshop_update"
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "E-Learning Platform",
         "description": "An online platform for e-learning with course management, quizzes, and student tracking features. It allows students to enroll in courses and complete quizzes, with performance tracking.",
         "image": "3",
         "role":"Backend",
-        "techStack": ["ReactJS", "Node JS (ORM)", "MySQL", "Express", "Tailwind CSS","MUI"],
+        "techStack": ["ReactJS", "Node JS", "MySQL", "Express", "Tailwind CSS","MUI"],
+        "liveLink": "https://techlehren-frontend.onrender.com",
         "githubLink":"https://github.com/Priyadarshan-B/TechLehren"
     },
     {
-        "id": 4,
+        "id": 5,
         "title": "Travel Dot",
         "description": "A travel booking platform that allows users to search for destinations, book flights, and hotels. Built with ReactJS and Node.js for an intuitive user experience and smooth interaction.",
         "image": "4",
@@ -38,7 +60,7 @@
         "githubLink":"https://github.com/Priyadarshan-B/Travel_Dot"
     },
     {
-        "id":5,
+        "id":6,
         "title":"Legal Aid Clinic (SOEL)",
         "description":"A Legal Aid Clinic portal for SOEL, built with React and Tailwind CSS, offering a modern, user-friendly platform for managing cases and facilitating collaboration between students, faculty, and clients.",
         "image":"5",
@@ -48,7 +70,7 @@
         "githubLink":"https://github.com/Priyadarshan-B/leagalAid"
     },
     {
-        "id":6,
+        "id":7,
         "title":"EDFN Technologies",
         "description":"EDFN Technologies is a PCB manufacturing company, and its landing page is built using React with a focus on SEO optimization. The page highlights the company's expertise in PCB design, development, and manufacturing while ensuring a professional and user-friendly experience.",
         "image":"6",
@@ -58,7 +80,7 @@
         "githubLink":"https://github.com/Priyadarshan-B/EDFN"
     },
     {
-        "id":7,
+        "id":8,
         "title":"Bill Track",
         "description":"BillTract is a streamlined billing management platform built with React, Node.js, and NextUI. It simplifies the process of creating, approving, and rejecting bills while ensuring secure authentication through OAuth integration. With an intuitive UI and seamless workflow, BillTract enhances efficiency in handling financial transactions and approvals.",
         "image":"7",
@@ -67,7 +89,7 @@
         "githubLink":"https://github.com/Priyadarshan-B/Mark_Entry"
     },
     {
-        "id":8,
+        "id":9,
         "title":"Personal Website",
         "description":"My Portfolio is a dynamic and visually engaging personal website showcasing my expertise as a web developer. Built with React and Tailwind CSS, it features light and dark mode, a sleek UI, and smooth animations. The portfolio highlights my projects, skills, and experience, offering an interactive and modern browsing experience. ",
         "image":"8",

@@ -76,5 +76,14 @@
   gap: 10px;
 }
 
+.skill-zoom {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.skill-zoom:hover {
+  transform: scale(1.10);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  z-index: 2;
+}
+
 
 

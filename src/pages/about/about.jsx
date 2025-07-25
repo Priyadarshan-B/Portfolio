@@ -1,12 +1,21 @@
 import { Card, CardBody, CardHeader } from "@heroui/react";
-import gif from "../../assets/about2.svg";
+import { otherAssets } from "../../config/assetUrls";
 
 const About = () => {
   return (
     <div className="flex flex-col md:flex-row items-start p-4">
       <div className="flex flex-1 flex-col items-center gap-4">
-        <h3 className="font-bold text-3xl text-center" data-aos="fade-left">About Me</h3>
-        <img src={gif} alt="About" height="200px" width="500px" className="rounded-full" data-aos="fade-up" />
+        <h3 className="font-bold text-3xl text-center" data-aos="fade-left">
+          About Me
+        </h3>
+        <img
+          src={otherAssets.aboutGif}
+          alt="About"
+          height="200px"
+          width="500px"
+          className="rounded-full"
+          data-aos="fade-up"
+        />
       </div>
 
       <div className="flex flex-1 flex-col gap-10 text-gray-700 max-w-4xl">

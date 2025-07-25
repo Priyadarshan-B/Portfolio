@@ -1,4 +1,4 @@
-import next from "../../assets/nextui.png";
+import { otherAssets } from "../../config/assetUrls";
 import "./skill.css";
 
 const skills = [
@@ -108,7 +108,7 @@ const skills = [
   },
   {
     name: "NextUI",
-    image: next,
+    image: otherAssets.nextui,
   },
 ];
 
@@ -130,7 +130,7 @@ const Skills = () => {
           <div
             key={skill.name}
             data-aos="zoom-in"
-            className="flex items-center gap-2 bg-white dark:bg-gray-950 text-black dark:text-white px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg"
+            className="flex items-center gap-2 bg-white dark:bg-gray-950 text-black dark:text-white px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-95 hover:shadow-lg"
           >
             <img
               src={skill.image}
