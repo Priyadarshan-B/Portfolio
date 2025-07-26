@@ -70,13 +70,14 @@ const Project = () => {
             technologies
           </p>
         </div>
-        {/* Masonry Grid */}
+
         <Masonry
           breakpointCols={{
             default: 4,
             1280: 4,
             1024: 3,
             768: 2,
+            640: 1,
             0: 1,
           }}
           className="masonry-grid"
@@ -176,6 +177,31 @@ const Project = () => {
                   {/* Click Indicator */}
                   <div className="absolute top-4 right-4 glass-effect text-white px-3 py-1 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 pulse-animation">
                     Click to view
+                  </div>
+                </div>
+
+                {/* Mobile Card Content */}
+                <div className="md:hidden p-4 bg-white dark:bg-gray-800">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-3 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {project.techStack.slice(0, 4).map((tech, index) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.techStack.length > 4 && (
+                      <span className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full">
+                        +{project.techStack.length - 4}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

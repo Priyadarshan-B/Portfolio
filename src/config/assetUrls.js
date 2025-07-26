@@ -70,6 +70,8 @@ export const otherAssets = {
   mern: getAssetUrl("mern.png"),
   react: getAssetUrl("react.svg"),
   vite: getAssetUrl("vite.svg"),
+  supabase: getAssetUrl("sup.png"),
+  mudblazor: getAssetUrl("mud.png"),
 };
 
 // Project image arrays (matching the original structure)

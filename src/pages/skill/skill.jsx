@@ -13,6 +13,11 @@ const skills = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
   },
   {
+    name: "C#",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+  },
+  {
     name: "JavaScript",
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
@@ -26,6 +31,11 @@ const skills = [
     name: "React",
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Blazor",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
   },
   {
     name: "Next.js",
@@ -57,6 +67,15 @@ const skills = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
   },
   {
+    name: "PostgreSQL",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    name: "Supabase",
+    image: otherAssets.supabase,
+  },
+  {
     name: "Git",
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
@@ -70,6 +89,12 @@ const skills = [
     name: "Vercel",
     image:
       "https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/favicon.ico",
+  },
+
+  {
+    name: "Netlify",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg",
   },
   {
     name: "Postman",
@@ -92,11 +117,6 @@ const skills = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg",
   },
   {
-    name: "Netlify",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg",
-  },
-  {
     name: "Ant Design",
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/antdesign/antdesign-original.svg",
@@ -107,8 +127,13 @@ const skills = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
   },
   {
-    name: "NextUI",
+    name: "HeroUI",
     image: otherAssets.nextui,
+  },
+
+  {
+    name: "MudBlazor",
+    image: otherAssets.mudblazor,
   },
 ];
 
@@ -130,7 +155,7 @@ const Skills = () => {
           <div
             key={skill.name}
             data-aos="zoom-in"
-            className="flex items-center gap-2 bg-white dark:bg-gray-950 text-black dark:text-white px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-95 hover:shadow-lg"
+            className="flex items-center gap-2 bg-white dark:bg-gray-950 text-black dark:text-white px-4 py-2 rounded-lg shadow-md transition-transform transform hover:scale-125 hover:shadow-lg"
           >
             <img
               src={skill.image}

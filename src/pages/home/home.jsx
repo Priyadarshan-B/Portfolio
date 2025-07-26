@@ -17,6 +17,7 @@ const Home = () => {
   const [letterIndex, setLetterIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const socialLinks = [
     {
@@ -95,6 +96,10 @@ const Home = () => {
     document.body.removeChild(link);
   };
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-center h-full w-full px-24 text-center md:text-left">
       <div className="mb-6 md:mb-0 md:w-1/2">
@@ -154,11 +159,14 @@ const Home = () => {
       >
         <div className="wave-container">
           <div className="wave-animation"></div>
-          <img
-            src={otherAssets.profileImage}
-            alt="photo"
-            className="image-container cursor-pointer transform transition-transform duration-200 hover:scale-105"
-          />
+          <div className={`image-wrapper ${imageLoaded ? "image-loaded" : ""}`}>
+            <img
+              src={otherAssets.profileImage}
+              alt="photo"
+              className="image-container cursor-pointer"
+              onLoad={handleImageLoad}
+            />
+          </div>
         </div>
       </div>
 
