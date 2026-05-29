@@ -63,7 +63,7 @@ export const projectImages = {
 
 // Other assets
 export const otherAssets = {
-  profileImage: getAssetUrl("image.jpg"),
+  profileImage: getAssetUrl("priyan_profile.jpeg"),
   cv: getAssetUrl("cv.pdf"),
   aboutGif: getAssetUrl("about2.svg"),
   nextui: getAssetUrl("nextui.png"),
